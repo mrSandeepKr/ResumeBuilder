@@ -17,19 +17,17 @@ public class ExperienceModel: SectionBaseModel {
     let startDate: Date
     let endDate: Date
     let isPresent: Bool
+    let skills: [String]
     
-    init(companyName: String, designation: String, roleDescription: String, startDate: Date, endDate: Date, isPresent: Bool) {
+    init(companyName: String, designation: String, roleDescription: String, startDate: Date, endDate: Date, isPresent: Bool, skills: [String]) {
         self.companyName = companyName
         self.designation = designation
         self.roleDescription = roleDescription
         self.startDate = startDate
         self.endDate = endDate
         self.isPresent = isPresent
+        self.skills = skills
         
         super.init(sectionType: .Experience)
-    }
-    
-    public static func getDefaultValue() -> ExperienceModel {
-        return ExperienceModel(companyName: "", designation: "", roleDescription: "", startDate: Date(), endDate: Date(), isPresent: false)
     }
 }

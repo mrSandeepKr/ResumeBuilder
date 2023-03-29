@@ -7,24 +7,26 @@
 
 import Foundation
 
-class EducationModel {
-    let school: String
-    let Degree: String
-    let FieldOfStudy: String
-    let startDate: String
-    let endDate: String
-    let Grade: String
+class EducationModel: SectionBaseModel {
+    let institution: String
+    let degree: String
+    let fieldOfStudy: String
+    let startDate: Date
+    let endDate: Date
+    let grade: String
     let description: String
     let skills: [String]
     
-    init(school: String, Degree: String, FieldOfStudy: String, startDate: String, endDate: String, Grade: String, description: String, skills: [String]) {
-        self.school = school
-        self.Degree = Degree
-        self.FieldOfStudy = FieldOfStudy
+    init(institution: String, degree: String, fieldOfStudy: String, startDate: Date, endDate: Date, grade: String, description: String, skills: [String]) {
+        self.institution = institution
+        self.degree = degree
+        self.fieldOfStudy = fieldOfStudy
         self.startDate = startDate
         self.endDate = endDate
-        self.Grade = Grade
+        self.grade = grade
         self.description = description
         self.skills = skills
+        
+        super.init(sectionType: .Education)
     }
 }

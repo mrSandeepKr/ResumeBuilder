@@ -16,7 +16,7 @@ class SectionListViewModel {
         }
     }
     
-    func fetchDate() {
-        
+    func fetchData() {
+        // make the data base call
     }
 }

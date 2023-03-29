@@ -10,6 +10,7 @@ import UIKit
 class AboutSectionTableViewCell: UITableViewCell {
     let aboutTextView: UITextView = {
         let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
@@ -27,13 +28,26 @@ class AboutSectionTableViewCell: UITableViewCell {
     var staticConstraints: [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         
+        let sideMargin = CGFloat(10)
+        
         constraints.append(contentsOf: [
             aboutTextView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            aboutTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            aboutTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: sideMargin),
             aboutTextView.heightAnchor.constraint(equalToConstant: 100),
-            aboutTextView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            aboutTextView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            aboutTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
+        constraints.forEach { constraint in
+            if constraint.firstAttribute == .height {
+                constraint.priority = UILayoutPriority(999)
+            }
+        }
+        
         return constraints
+    }
+    
+    public func configureCell(model: AboutModel) {
+        aboutTextView.text = model.aboutText
     }
 }

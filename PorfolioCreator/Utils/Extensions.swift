@@ -13,3 +13,13 @@ extension UITableViewCell {
         return String(describing: self)
     }
 }
+
+extension String {
+    
+    func widthOfString(usingFont font: UIFont) -> CGFloat {
+        let fontAttributes = [NSAttributedString.Key.font: font]
+        let size = self.size(withAttributes: fontAttributes)
+        
+        return size.width
+    }
+}

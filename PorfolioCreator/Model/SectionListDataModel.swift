@@ -9,7 +9,7 @@ import Foundation
 
 class SectionListDataModel {
     let sectionType: SectionType
-    let content: [SectionBaseModel]
+    var content: [SectionBaseModel]
     
     init(sectionType: SectionType, content: [SectionBaseModel]) {
         self.sectionType = sectionType
