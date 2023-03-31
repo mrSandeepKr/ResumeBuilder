@@ -11,9 +11,17 @@ class ExperienceSectionTableViewCell: UITableViewCell {
     let jobLogoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .red
+        imageView.image = UIImage.init(systemName: "building.2.crop.circle.fill")
+        imageView.tintColor = UIColor.init(red: 0.11, green: 0.27, blue: 0.53, alpha: 1.0)
         
         return imageView
+    }()
+    
+    let editButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage.init(systemName: "pencil"), for: .normal)
+        return button
     }()
     
     let designationTextView: UITextView = {
@@ -61,6 +69,8 @@ class ExperienceSectionTableViewCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.textContainer.lineBreakMode = .byTruncatingTail
         textView.textContainer.maximumNumberOfLines = 2
+        textView.textContainerInset = .zero
+        
         textView.isEditable = false
         return textView
     }()
@@ -74,6 +84,7 @@ class ExperienceSectionTableViewCell: UITableViewCell {
         contentView.addSubview(employmentTimeTextView)
         contentView.addSubview(roleDescriptionTextView)
         contentView.addSubview(skillsTextView)
+        contentView.addSubview(editButton)
         
         NSLayoutConstraint.activate(staticConstraints)
     }
@@ -94,6 +105,8 @@ class ExperienceSectionTableViewCell: UITableViewCell {
         let roleDescHeight = CGFloat(45)
         let skillsHeight = CGFloat(40)
         
+        let editButtonSize = CGFloat(40)
+        
         constraints.append(contentsOf: [
             jobLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             jobLogoImageView.heightAnchor.constraint(equalToConstant: imageSize),
@@ -102,17 +115,24 @@ class ExperienceSectionTableViewCell: UITableViewCell {
         ])
         
         constraints.append(contentsOf: [
+            editButton.topAnchor.constraint(equalTo: designationTextView.topAnchor),
+            editButton.heightAnchor.constraint(equalToConstant: editButtonSize),
+            editButton.widthAnchor.constraint(equalToConstant: editButtonSize),
+            editButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+        ])
+        
+        constraints.append(contentsOf: [
             designationTextView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: topMargin),
             designationTextView.leadingAnchor.constraint(equalTo: jobLogoImageView.trailingAnchor, constant: sideMargin),
             designationTextView.heightAnchor.constraint(equalToConstant: designationHeight),
-            designationTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            designationTextView.trailingAnchor.constraint(equalTo: editButton.leadingAnchor)
         ])
         
         constraints.append(contentsOf: [
             jobTextView.topAnchor.constraint(equalTo: designationTextView.bottomAnchor, constant: 1),
             jobTextView.leadingAnchor.constraint(equalTo: jobLogoImageView.trailingAnchor, constant: sideMargin),
             jobTextView.heightAnchor.constraint(equalToConstant: baseHeight),
-            jobTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            jobTextView.trailingAnchor.constraint(equalTo: editButton.leadingAnchor)
         ])
         
         constraints.append(contentsOf: [
@@ -146,12 +166,16 @@ class ExperienceSectionTableViewCell: UITableViewCell {
         return  constraints
     }
     
-    public func configureCell(model: ExperienceModel) {
+    public func configureCell(model: ExperienceModel, showEditButton: Bool = false) {
         designationTextView.text = model.companyName
         jobTextView.text = model.designation
-        employmentTimeTextView.text = "\(dateFormatter.string(from: model.startDate))"
+        employmentTimeTextView.text = "\(dateFormatter.string(from: model.startDate)) - \(dateFormatter.string(from: model.endDate))"
         roleDescriptionTextView.text = model.roleDescription
-        skillsTextView.text = "Skills ".appending(model.skills.joined(separator: " • "))
+        skillsTextView.attributedText = Utils.getSkillAttributedString(skills: model.skills, fontSize: 13)
+        
+        if !showEditButton {
+            editButton.isHidden = true
+        }
     }
     
     var dateFormatter: DateFormatter {

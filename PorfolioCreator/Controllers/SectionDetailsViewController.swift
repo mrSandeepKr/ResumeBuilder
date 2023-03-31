@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import UIKit
+//
+//class EducationEditView: UIView {
+//    
+//}
+//
+//
+//class SectionDetailsViewController: UIViewController {
+//    let viewModel:
+//}

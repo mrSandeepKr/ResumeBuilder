@@ -11,8 +11,16 @@ class EducationSectionTableViewCell: UITableViewCell {
     let educationImageiew: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .cyan
+        imageView.image = UIImage.init(systemName: "building.columns.circle.fill")
+        imageView.tintColor = UIColor.init(red: 0.28, green: 0.47, blue: 0.53, alpha: 1.0)
         return imageView
+    }()
+    
+    let editButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage.init(systemName: "pencil"), for: .normal)
+        return button
     }()
     
     let institutionTextView: UITextView = {
@@ -41,6 +49,7 @@ class EducationSectionTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(educationImageiew)
+        contentView.addSubview(editButton)
         contentView.addSubview(institutionTextView)
         contentView.addSubview(degreeTextView)
         contentView.addSubview(skillsTextView)
@@ -59,6 +68,7 @@ class EducationSectionTableViewCell: UITableViewCell {
         let imageViewTopMargin = CGFloat(15)
         let topMargin = CGFloat(5)
         let sideMargin = CGFloat(10)
+        let editButtonSize = CGFloat(40)
         
         let baseHeight = CGFloat(20)
         let institutionTextViewHeight = CGFloat(30)
@@ -72,19 +82,25 @@ class EducationSectionTableViewCell: UITableViewCell {
         ])
         
         constraints.append(contentsOf: [
+            editButton.topAnchor.constraint(equalTo: institutionTextView.topAnchor),
+            editButton.heightAnchor.constraint(equalToConstant: editButtonSize),
+            editButton.widthAnchor.constraint(equalToConstant: editButtonSize),
+            editButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
+        ])
+        
+        constraints.append(contentsOf: [
             institutionTextView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: topMargin),
             institutionTextView.leadingAnchor.constraint(equalTo: educationImageiew.trailingAnchor, constant: sideMargin),
             institutionTextView.heightAnchor.constraint(equalToConstant: institutionTextViewHeight),
-            institutionTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            institutionTextView.trailingAnchor.constraint(equalTo: editButton.leadingAnchor)
         ])
         
         constraints.append(contentsOf: [
             degreeTextView.topAnchor.constraint(equalTo: institutionTextView.bottomAnchor, constant: 1),
             degreeTextView.leadingAnchor.constraint(equalTo: educationImageiew.trailingAnchor, constant: sideMargin),
-            degreeTextView.heightAnchor.constraint(equalToConstant: baseHeight ),
-            degreeTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            degreeTextView.heightAnchor.constraint(equalToConstant: baseHeight),
+            degreeTextView.trailingAnchor.constraint(equalTo: editButton.leadingAnchor)
         ])
-        
         
         constraints.append(contentsOf: [
             skillsTextView.topAnchor.constraint(equalTo: degreeTextView.bottomAnchor, constant: topMargin),
@@ -103,9 +119,13 @@ class EducationSectionTableViewCell: UITableViewCell {
         return  constraints
     }
     
-    public func configureCell(model: EducationModel) {
+    public func configureCell(model: EducationModel, showEditButton: Bool = false) {
         self.institutionTextView.text = model.institution
         self.degreeTextView.text = model.degree
         self.skillsTextView.text = model.skills.joined(separator: " • ")
+        
+        if !showEditButton {
+            editButton.isHidden = true
+        }
     }
 }
