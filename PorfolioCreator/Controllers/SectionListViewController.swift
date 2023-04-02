@@ -21,6 +21,7 @@ class SectionListViewController: UIViewController {
         tableView.register(SkillSectionTableViewCell.self, forCellReuseIdentifier: SkillSectionTableViewCell.reusableIdentifier)
         
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.allowsSelection = false
         return tableView
     }()
     
@@ -51,10 +52,6 @@ class SectionListViewController: UIViewController {
 }
 
 extension SectionListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.data[section].sectionType.rawValue
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.data.count
     }
@@ -100,6 +97,50 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
             }
             cell.configureCell(model: model)
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        
+        let buttonSize = 40
+        let button = UIButton(frame: CGRect(x: Int(tableView.frame.width) - 40 - 10, y: 5, width: buttonSize, height: buttonSize))
+        button.setImage(UIImage.init(systemName: "pencil"), for: .normal)
+        button.tag = section
+        button.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+        
+        let label = UILabel()
+        label.text = viewModel.data[section].sectionType.rawValue
+        label.font = UIFont.systemFont(ofSize: 19)
+        label.textColor = .black
+        
+        let size = label.sizeThatFits(CGSize(width: tableView.frame.width, height: tableView.frame.height))
+        label.frame = CGRect(x: 20, y: 5, width: size.width, height: size.height)
+        
+        view.addSubview(label)
+        view.addSubview(button)
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    @objc func editButtonTapped(_ sender: UIButton) {
+        guard let sectionType: SectionType = SectionType.init(rawValue: sender.tag)
+        else {
+            return
+        }
+        
+        switch sectionType {
+        case .About:
+            break
+        case .Experience:
+                break
+        case .Education:
+                break
+        case .Skills:
+                break
         }
     }
 }

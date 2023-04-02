@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		6D1BD83829D586CD00570C46 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD83729D586CD00570C46 /* Utils.swift */; };
+		6D1BD84629D6D41700570C46 /* AboutEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD84529D6D41700570C46 /* AboutEditViewController.swift */; };
+		6D1BD84829D6D42E00570C46 /* ExperienceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD84729D6D42E00570C46 /* ExperienceListViewController.swift */; };
+		6D1BD84A29D6D43B00570C46 /* EducationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD84929D6D43B00570C46 /* EducationListViewController.swift */; };
+		6D1BD84C29D6D44900570C46 /* SkillsEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD84B29D6D44900570C46 /* SkillsEditViewController.swift */; };
+		6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */; };
+		6D1BD85229D7F3ED00570C46 /* UIDateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */; };
 		6D849F5C29CF53630041685D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F5B29CF53630041685D /* AppDelegate.swift */; };
 		6D849F5E29CF53630041685D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F5D29CF53630041685D /* SceneDelegate.swift */; };
 		6D849F6529CF53640041685D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D849F6429CF53640041685D /* Assets.xcassets */; };
 		6D849F6829CF53640041685D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D849F6629CF53640041685D /* LaunchScreen.storyboard */; };
 		6D849F7429D0014F0041685D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F7329D0014F0041685D /* Extensions.swift */; };
 		6D849F7729D002300041685D /* ExperienceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F7629D002300041685D /* ExperienceModel.swift */; };
+		6DE0F8F329D8098F00812097 /* FormEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8F229D8098F00812097 /* FormEditViewController.swift */; };
+		6DE0F8F629D94FAE00812097 /* FormTextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8F529D94FAE00812097 /* FormTextInputCell.swift */; };
+		6DE0F8F829D94FBE00812097 /* FormDateInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8F729D94FBE00812097 /* FormDateInputCell.swift */; };
 		6DE47CE229D1DBFA00F38FCD /* SectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE129D1DBFA00F38FCD /* SectionListViewController.swift */; };
 		6DE47CE529D1DC2900F38FCD /* SectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE429D1DC2900F38FCD /* SectionDetailsViewController.swift */; };
 		6DE47CE729D22B5900F38FCD /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE629D22B5900F38FCD /* SectionType.swift */; };
@@ -31,6 +40,12 @@
 
 /* Begin PBXFileReference section */
 		6D1BD83729D586CD00570C46 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		6D1BD84529D6D41700570C46 /* AboutEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutEditViewController.swift; sourceTree = "<group>"; };
+		6D1BD84729D6D42E00570C46 /* ExperienceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceListViewController.swift; sourceTree = "<group>"; };
+		6D1BD84929D6D43B00570C46 /* EducationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationListViewController.swift; sourceTree = "<group>"; };
+		6D1BD84B29D6D44900570C46 /* SkillsEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsEditViewController.swift; sourceTree = "<group>"; };
+		6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICountingTextView.swift; sourceTree = "<group>"; };
+		6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDateTextView.swift; sourceTree = "<group>"; };
 		6D849F5829CF53630041685D /* PorfolioCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PorfolioCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D849F5B29CF53630041685D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D849F5D29CF53630041685D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +54,9 @@
 		6D849F6929CF53640041685D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D849F7329D0014F0041685D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6D849F7629D002300041685D /* ExperienceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceModel.swift; sourceTree = "<group>"; };
+		6DE0F8F229D8098F00812097 /* FormEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEditViewController.swift; sourceTree = "<group>"; };
+		6DE0F8F529D94FAE00812097 /* FormTextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextInputCell.swift; sourceTree = "<group>"; };
+		6DE0F8F729D94FBE00812097 /* FormDateInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDateInputCell.swift; sourceTree = "<group>"; };
 		6DE47CE129D1DBFA00F38FCD /* SectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListViewController.swift; sourceTree = "<group>"; };
 		6DE47CE429D1DC2900F38FCD /* SectionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailsViewController.swift; sourceTree = "<group>"; };
 		6DE47CE629D22B5900F38FCD /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
@@ -65,6 +83,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D1BD84D29D6D47600570C46 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				6D1BD84529D6D41700570C46 /* AboutEditViewController.swift */,
+				6D1BD84729D6D42E00570C46 /* ExperienceListViewController.swift */,
+				6D1BD84929D6D43B00570C46 /* EducationListViewController.swift */,
+				6D1BD84B29D6D44900570C46 /* SkillsEditViewController.swift */,
+				6DE0F8F229D8098F00812097 /* FormEditViewController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		6D1BD84E29D6E0C400570C46 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				6DE47CE829D22B9000F38FCD /* ExperienceSectionTableViewCell.swift */,
+				6DE47CEA29D22BAC00F38FCD /* EducationSectionTableViewCell.swift */,
+				6DE47CEC29D22BCE00F38FCD /* SkillSectionTableViewCell.swift */,
+				6DE47CEE29D22E0A00F38FCD /* AboutSectionTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		6D849F4F29CF53630041685D = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +142,10 @@
 		6D849F6F29CF53EC0041685D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6DE47CE829D22B9000F38FCD /* ExperienceSectionTableViewCell.swift */,
-				6DE47CEA29D22BAC00F38FCD /* EducationSectionTableViewCell.swift */,
-				6DE47CEC29D22BCE00F38FCD /* SkillSectionTableViewCell.swift */,
-				6DE47CEE29D22E0A00F38FCD /* AboutSectionTableViewCell.swift */,
+				6DE0F8F429D94F5A00812097 /* FormTableViewCells */,
+				6D1BD84E29D6E0C400570C46 /* TableViewCells */,
+				6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */,
+				6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +162,7 @@
 		6D849F7529D0021F0041685D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6DE47CE629D22B5900F38FCD /* SectionType.swift */,
 				6DE47CF829D2C1D200F38FCD /* SectionModels */,
 				6DE47CF929D2C1F000F38FCD /* SectionModelProtocol.swift */,
 				6DE47CFB29D2D52200F38FCD /* SectionListDataModel.swift */,
@@ -136,9 +178,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6DE0F8F429D94F5A00812097 /* FormTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				6DE0F8F529D94FAE00812097 /* FormTextInputCell.swift */,
+				6DE0F8F729D94FBE00812097 /* FormDateInputCell.swift */,
+			);
+			path = FormTableViewCells;
+			sourceTree = "<group>";
+		};
 		6DE47CE329D1DC0000F38FCD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D1BD84D29D6D47600570C46 /* Edit */,
 				6DE47CE129D1DBFA00F38FCD /* SectionListViewController.swift */,
 				6DE47CE429D1DC2900F38FCD /* SectionDetailsViewController.swift */,
 			);
@@ -149,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				6D849F7629D002300041685D /* ExperienceModel.swift */,
-				6DE47CE629D22B5900F38FCD /* SectionType.swift */,
 				6DE47CF029D231AD00F38FCD /* AboutModel.swift */,
 				6DE47CF229D231BA00F38FCD /* EducationModel.swift */,
 				6DE47CF429D2325A00F38FCD /* SkillModel.swift */,
@@ -227,9 +278,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DE0F8F329D8098F00812097 /* FormEditViewController.swift in Sources */,
+				6DE0F8F829D94FBE00812097 /* FormDateInputCell.swift in Sources */,
 				6DE47CF729D2327E00F38FCD /* SectionListViewModel.swift in Sources */,
 				6D849F7429D0014F0041685D /* Extensions.swift in Sources */,
+				6D1BD84629D6D41700570C46 /* AboutEditViewController.swift in Sources */,
 				6DE47CE729D22B5900F38FCD /* SectionType.swift in Sources */,
+				6D1BD84829D6D42E00570C46 /* ExperienceListViewController.swift in Sources */,
+				6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */,
+				6D1BD84A29D6D43B00570C46 /* EducationListViewController.swift in Sources */,
 				6D849F7729D002300041685D /* ExperienceModel.swift in Sources */,
 				6DE47CE229D1DBFA00F38FCD /* SectionListViewController.swift in Sources */,
 				6DE47CED29D22BCE00F38FCD /* SkillSectionTableViewCell.swift in Sources */,
@@ -240,11 +297,14 @@
 				6DE47CF329D231BA00F38FCD /* EducationModel.swift in Sources */,
 				6D1BD83829D586CD00570C46 /* Utils.swift in Sources */,
 				6DE47CE529D1DC2900F38FCD /* SectionDetailsViewController.swift in Sources */,
+				6D1BD84C29D6D44900570C46 /* SkillsEditViewController.swift in Sources */,
 				6DE47CF129D231AD00F38FCD /* AboutModel.swift in Sources */,
+				6D1BD85229D7F3ED00570C46 /* UIDateTextView.swift in Sources */,
 				6DE47CF529D2325A00F38FCD /* SkillModel.swift in Sources */,
 				6DE47CFC29D2D52200F38FCD /* SectionListDataModel.swift in Sources */,
 				6D849F5E29CF53630041685D /* SceneDelegate.swift in Sources */,
 				6DE47CFA29D2C1F000F38FCD /* SectionModelProtocol.swift in Sources */,
+				6DE0F8F629D94FAE00812097 /* FormTextInputCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
