@@ -14,10 +14,11 @@ class UICountingTextView: UIView {
     
     let contentTextView: UITextView = {
         let textView = UITextView()
-        textView.textContainerInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        textView.textContainerInset = .zero
         textView.translatesAutoresizingMaskIntoConstraints = false
         
-        textView.textContainerInset = UIEdgeInsets(top: 10, left: 2, bottom: 10, right: 2)
+        textView.textContainerInset = UIEdgeInsets(top: 7, left: 2, bottom: 5, right: 2)
+        
         textView.layer.borderColor = UIColor.black.cgColor
         textView.layer.borderWidth = 1
         textView.layer.cornerRadius = 6
@@ -65,7 +66,7 @@ class UICountingTextView: UIView {
             countingLabel.heightAnchor.constraint(equalToConstant: labelHeight),
             countingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             countingLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            countingLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+            countingLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
         ])
         
         return constraints
@@ -83,12 +84,23 @@ extension UICountingTextView: UITextViewDelegate {
         if newText.count > maxCharCount {
             return false
         }
-        
+        textView.scrollRangeToVisible(range)
         return true
     }
     
     func updateTextCount() {
         let wordCount: Int = contentTextView.text.count
         countingLabel.text = "\(wordCount)/\(maxCharCount)"
+    }
+}
+
+extension UICountingTextView: FormFieldContentProtocol {
+    public var contentValue: String {
+        get {
+            return contentTextView.text ?? ""
+        }
+        set {
+            contentTextView.text = newValue
+        }
     }
 }

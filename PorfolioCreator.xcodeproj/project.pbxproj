@@ -20,9 +20,11 @@
 		6D849F6829CF53640041685D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D849F6629CF53640041685D /* LaunchScreen.storyboard */; };
 		6D849F7429D0014F0041685D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F7329D0014F0041685D /* Extensions.swift */; };
 		6D849F7729D002300041685D /* ExperienceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F7629D002300041685D /* ExperienceModel.swift */; };
-		6DE0F8F329D8098F00812097 /* FormEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8F229D8098F00812097 /* FormEditViewController.swift */; };
-		6DE0F8F629D94FAE00812097 /* FormTextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8F529D94FAE00812097 /* FormTextInputCell.swift */; };
-		6DE0F8F829D94FBE00812097 /* FormDateInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8F729D94FBE00812097 /* FormDateInputCell.swift */; };
+		6DE0F8F329D8098F00812097 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8F229D8098F00812097 /* FormViewController.swift */; };
+		6DE0F8FA29D9A16F00812097 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8F929D9A16F00812097 /* FormViewModel.swift */; };
+		6DE0F8FC29D9AB1400812097 /* FormTextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8FB29D9AB1400812097 /* FormTextInputTableViewCell.swift */; };
+		6DE0F8FE29D9B81800812097 /* FormCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8FD29D9B81800812097 /* FormCellModel.swift */; };
+		6DE0F90129DAAE0100812097 /* FormFieldContentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90029DAAE0100812097 /* FormFieldContentProtocol.swift */; };
 		6DE47CE229D1DBFA00F38FCD /* SectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE129D1DBFA00F38FCD /* SectionListViewController.swift */; };
 		6DE47CE529D1DC2900F38FCD /* SectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE429D1DC2900F38FCD /* SectionDetailsViewController.swift */; };
 		6DE47CE729D22B5900F38FCD /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE629D22B5900F38FCD /* SectionType.swift */; };
@@ -54,9 +56,11 @@
 		6D849F6929CF53640041685D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D849F7329D0014F0041685D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6D849F7629D002300041685D /* ExperienceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceModel.swift; sourceTree = "<group>"; };
-		6DE0F8F229D8098F00812097 /* FormEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEditViewController.swift; sourceTree = "<group>"; };
-		6DE0F8F529D94FAE00812097 /* FormTextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextInputCell.swift; sourceTree = "<group>"; };
-		6DE0F8F729D94FBE00812097 /* FormDateInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDateInputCell.swift; sourceTree = "<group>"; };
+		6DE0F8F229D8098F00812097 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		6DE0F8F929D9A16F00812097 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		6DE0F8FB29D9AB1400812097 /* FormTextInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextInputTableViewCell.swift; sourceTree = "<group>"; };
+		6DE0F8FD29D9B81800812097 /* FormCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCellModel.swift; sourceTree = "<group>"; };
+		6DE0F90029DAAE0100812097 /* FormFieldContentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldContentProtocol.swift; sourceTree = "<group>"; };
 		6DE47CE129D1DBFA00F38FCD /* SectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListViewController.swift; sourceTree = "<group>"; };
 		6DE47CE429D1DC2900F38FCD /* SectionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailsViewController.swift; sourceTree = "<group>"; };
 		6DE47CE629D22B5900F38FCD /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
@@ -90,7 +94,7 @@
 				6D1BD84729D6D42E00570C46 /* ExperienceListViewController.swift */,
 				6D1BD84929D6D43B00570C46 /* EducationListViewController.swift */,
 				6D1BD84B29D6D44900570C46 /* SkillsEditViewController.swift */,
-				6DE0F8F229D8098F00812097 /* FormEditViewController.swift */,
+				6DE0F8F229D8098F00812097 /* FormViewController.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -125,6 +129,7 @@
 		6D849F5A29CF53630041685D /* PorfolioCreator */ = {
 			isa = PBXGroup;
 			children = (
+				6DE0F8FF29DAADF100812097 /* Protocols */,
 				6DE47CE329D1DC0000F38FCD /* Controllers */,
 				6D91895629D061C40043683D /* ViewModel */,
 				6D849F7529D0021F0041685D /* Model */,
@@ -142,10 +147,10 @@
 		6D849F6F29CF53EC0041685D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6DE0F8F429D94F5A00812097 /* FormTableViewCells */,
 				6D1BD84E29D6E0C400570C46 /* TableViewCells */,
 				6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */,
 				6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */,
+				6DE0F8FB29D9AB1400812097 /* FormTextInputTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				6DE47CF829D2C1D200F38FCD /* SectionModels */,
 				6DE47CF929D2C1F000F38FCD /* SectionModelProtocol.swift */,
 				6DE47CFB29D2D52200F38FCD /* SectionListDataModel.swift */,
+				6DE0F8FD29D9B81800812097 /* FormCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,17 +180,17 @@
 			isa = PBXGroup;
 			children = (
 				6DE47CF629D2327E00F38FCD /* SectionListViewModel.swift */,
+				6DE0F8F929D9A16F00812097 /* FormViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		6DE0F8F429D94F5A00812097 /* FormTableViewCells */ = {
+		6DE0F8FF29DAADF100812097 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				6DE0F8F529D94FAE00812097 /* FormTextInputCell.swift */,
-				6DE0F8F729D94FBE00812097 /* FormDateInputCell.swift */,
+				6DE0F90029DAAE0100812097 /* FormFieldContentProtocol.swift */,
 			);
-			path = FormTableViewCells;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		6DE47CE329D1DC0000F38FCD /* Controllers */ = {
@@ -278,9 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE0F8F329D8098F00812097 /* FormEditViewController.swift in Sources */,
-				6DE0F8F829D94FBE00812097 /* FormDateInputCell.swift in Sources */,
+				6DE0F8FA29D9A16F00812097 /* FormViewModel.swift in Sources */,
+				6DE0F8F329D8098F00812097 /* FormViewController.swift in Sources */,
 				6DE47CF729D2327E00F38FCD /* SectionListViewModel.swift in Sources */,
+				6DE0F90129DAAE0100812097 /* FormFieldContentProtocol.swift in Sources */,
 				6D849F7429D0014F0041685D /* Extensions.swift in Sources */,
 				6D1BD84629D6D41700570C46 /* AboutEditViewController.swift in Sources */,
 				6DE47CE729D22B5900F38FCD /* SectionType.swift in Sources */,
@@ -288,6 +295,7 @@
 				6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */,
 				6D1BD84A29D6D43B00570C46 /* EducationListViewController.swift in Sources */,
 				6D849F7729D002300041685D /* ExperienceModel.swift in Sources */,
+				6DE0F8FC29D9AB1400812097 /* FormTextInputTableViewCell.swift in Sources */,
 				6DE47CE229D1DBFA00F38FCD /* SectionListViewController.swift in Sources */,
 				6DE47CED29D22BCE00F38FCD /* SkillSectionTableViewCell.swift in Sources */,
 				6DE47CEF29D22E0A00F38FCD /* AboutSectionTableViewCell.swift in Sources */,
@@ -304,7 +312,7 @@
 				6DE47CFC29D2D52200F38FCD /* SectionListDataModel.swift in Sources */,
 				6D849F5E29CF53630041685D /* SceneDelegate.swift in Sources */,
 				6DE47CFA29D2C1F000F38FCD /* SectionModelProtocol.swift in Sources */,
-				6DE0F8F629D94FAE00812097 /* FormTextInputCell.swift in Sources */,
+				6DE0F8FE29D9B81800812097 /* FormCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

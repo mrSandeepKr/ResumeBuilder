@@ -21,7 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
         
-        let nav = UINavigationController(rootViewController: SectionListViewController())
+        let nav = UINavigationController(rootViewController: FormViewController(viewModel: FormViewModel(title: "Experience", fields: [
+                                                                                                            FormTextInputCellModel.init(cellLabel: "Company Name", maximumNumberOfLines: 1),
+                                                                                                            FormTextInputCellModel.init(cellLabel: "Designation", maximumNumberOfLines: 1),
+                                                                                                            FormDateInputCellModel.init(cellLabel: "Start Date"),
+                                                                                                            FormDateInputCellModel.init(cellLabel: "End Date"),
+                                                                                                            FormTextInputCellModel.init(cellLabel: "Role Description", maximumNumberOfLines: 3)
+                                                                                                        ])))
         nav.navigationBar.prefersLargeTitles = true
         nav.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
         window.rootViewController = nav
