@@ -132,15 +132,20 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
             return
         }
         
+        var vc: UIViewController? = nil
         switch sectionType {
         case .About:
-            break
+            vc = AboutEditViewController()
         case .Experience:
-                break
+            vc = ExperienceListViewContoller()
         case .Education:
-                break
+            vc = EducationListViewController()
         case .Skills:
-                break
+            vc = SkillsEditViewController()
         }
+        
+        let nav = UINavigationController.init(rootViewController: vc!)
+        nav.modalPresentationStyle = .fullScreen
+        navigationController?.present(nav, animated: true)
     }
 }

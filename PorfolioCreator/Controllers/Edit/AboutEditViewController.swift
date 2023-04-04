@@ -22,8 +22,9 @@ class AboutEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "About"
         view.backgroundColor = .systemBackground
+        title = "About"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissViewController))
         
         view.addSubview(aboutTextView)
         NSLayoutConstraint.activate(staticConstraints)
@@ -44,4 +45,7 @@ class AboutEditViewController: UIViewController {
         return constraints
     }
     
+    @objc func dismissViewController() {
+        dismiss(animated: true)
+    }
 }
