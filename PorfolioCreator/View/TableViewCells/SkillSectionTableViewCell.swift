@@ -17,7 +17,7 @@ class SkillSectionTableViewCell: UITableViewCell {
     }
     
     func configureCell(model: SkillModel) {
-        subviews.forEach({$0.removeFromSuperview()})
+        contentView.subviews.forEach({$0.removeFromSuperview()})
         
         let chipsView = ChipsView(model: ChipsModel.init(singleChipModels: model.skills.map({getChipModel(skill: $0)})))
         chipsView.translatesAutoresizingMaskIntoConstraints = false
