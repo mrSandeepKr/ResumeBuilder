@@ -48,61 +48,40 @@ class SkillSectionTableViewCell: UITableViewCell {
     }
     
     func buildCloudView(skills:[String]) {
-        let font: UIFont = UIFont.init(name: "verdana", size: 13) ?? UIFont.systemFont(ofSize: 13)
-        let fontHeight: CGFloat = font.lineHeight
-        
         let viewRightMargin: CGFloat = 30
         let viewLeftMargin: CGFloat = 15
         
-        let textVerticalTopMargin: CGFloat = CGFloat(3)
-        let textVerticalBottomMargin: CGFloat = CGFloat(5)
-        
-        
-        let textHorizontalMargin: CGFloat = CGFloat(5)
-        
         let chipHorizontalMargin = CGFloat(8)
         let chipVerticalMargin: CGFloat = 5
-        let chipHeight: CGFloat = fontHeight + (textVerticalTopMargin + textVerticalBottomMargin)
-        
-        let cornerRadius: CGFloat = 5
         
         var xPos: CGFloat = viewLeftMargin
         var yPos: CGFloat = 10
         
         
         for skill in skills {
-            let textWidth = skill.widthOfString(usingFont: font) * 1.2
-            let chipEnding = xPos + textWidth + chipHorizontalMargin + 2*textHorizontalMargin + viewRightMargin
+            let chipView = SingleChipView(model: getChipModel(skill: skill))
+            let sz = chipView.sizeThatFits(CGSize.init(width: 1000, height: 200))
             
-            if chipEnding > UIScreen.main.bounds.size.width {
+            if xPos + sz.width + chipHorizontalMargin + viewRightMargin > UIScreen.main.bounds.width {
                 xPos = viewLeftMargin
-                yPos += fontHeight + (2*chipVerticalMargin) + (textVerticalTopMargin + textVerticalBottomMargin)
+                yPos += sz.height + (2*chipVerticalMargin)
             }
             
-            let chipView = UIView(frame: CGRect(x: xPos,
-                                                y: yPos,
-                                                width: (2*textHorizontalMargin) + textWidth,
-                                                height: chipHeight))
+            chipView.frame = CGRect(origin: CGPoint.init(x: xPos, y: yPos), size: sz)
             
-            chipView.backgroundColor = .systemGray4
-            chipView.layer.cornerRadius = cornerRadius
-            
-            let label = UILabel(frame: CGRect(x: textHorizontalMargin,
-                                              y: textVerticalTopMargin,
-                                              width: textWidth,
-                                              height: fontHeight + 3))
-            
-            
-            label.textColor = .white
-            label.layoutMargins = .zero
-            label.textAlignment = .center
-            label.lineBreakMode = .byClipping
-            label.text = skill
-            
-            chipView.addSubview(label)
             chipsView.addSubview(chipView)
             
             xPos += chipHorizontalMargin + chipView.frame.width
         }
+    }
+    
+    func getChipModel(skill: String) -> SingleChipModel {
+        return SingleChipModel(labelText: skill,
+                                 isDismissable: true,
+                                 color: .gray,
+                                 horizontalMargin: 5,
+                                 verticalMargin: 5,
+                                 cornerRadius: 5,
+                                 fontSize: 13)
     }
 }
