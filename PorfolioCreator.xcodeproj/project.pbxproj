@@ -25,7 +25,7 @@
 		6DE0F8FC29D9AB1400812097 /* FormTextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8FB29D9AB1400812097 /* FormTextInputTableViewCell.swift */; };
 		6DE0F8FE29D9B81800812097 /* FormCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F8FD29D9B81800812097 /* FormCellModel.swift */; };
 		6DE0F90129DAAE0100812097 /* FormFieldContentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90029DAAE0100812097 /* FormFieldContentProtocol.swift */; };
-		6DE0F90329DBF32E00812097 /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90229DBF32E00812097 /* ChipView.swift */; };
+		6DE0F90329DBF32E00812097 /* ChipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90229DBF32E00812097 /* ChipsView.swift */; };
 		6DE0F90629DC2CF100812097 /* SingleChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90529DC2CF100812097 /* SingleChipView.swift */; };
 		6DE0F90829DC311C00812097 /* EducationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90729DC311C00812097 /* EducationListViewModel.swift */; };
 		6DE0F90A29DC312900812097 /* ExperienceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90929DC312900812097 /* ExperienceListViewModel.swift */; };
@@ -65,7 +65,7 @@
 		6DE0F8FB29D9AB1400812097 /* FormTextInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextInputTableViewCell.swift; sourceTree = "<group>"; };
 		6DE0F8FD29D9B81800812097 /* FormCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCellModel.swift; sourceTree = "<group>"; };
 		6DE0F90029DAAE0100812097 /* FormFieldContentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldContentProtocol.swift; sourceTree = "<group>"; };
-		6DE0F90229DBF32E00812097 /* ChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
+		6DE0F90229DBF32E00812097 /* ChipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsView.swift; sourceTree = "<group>"; };
 		6DE0F90529DC2CF100812097 /* SingleChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChipView.swift; sourceTree = "<group>"; };
 		6DE0F90729DC311C00812097 /* EducationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationListViewModel.swift; sourceTree = "<group>"; };
 		6DE0F90929DC312900812097 /* ExperienceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceListViewModel.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		6DE0F90429DC2CC300812097 /* Chip */ = {
 			isa = PBXGroup;
 			children = (
-				6DE0F90229DBF32E00812097 /* ChipView.swift */,
+				6DE0F90229DBF32E00812097 /* ChipsView.swift */,
 				6DE0F90529DC2CF100812097 /* SingleChipView.swift */,
 			);
 			path = Chip;
@@ -311,7 +311,7 @@
 				6D849F7429D0014F0041685D /* Extensions.swift in Sources */,
 				6D1BD84629D6D41700570C46 /* AboutEditViewController.swift in Sources */,
 				6DE47CE729D22B5900F38FCD /* SectionType.swift in Sources */,
-				6DE0F90329DBF32E00812097 /* ChipView.swift in Sources */,
+				6DE0F90329DBF32E00812097 /* ChipsView.swift in Sources */,
 				6DE0F90A29DC312900812097 /* ExperienceListViewModel.swift in Sources */,
 				6D1BD84829D6D42E00570C46 /* ExperienceListViewController.swift in Sources */,
 				6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */,

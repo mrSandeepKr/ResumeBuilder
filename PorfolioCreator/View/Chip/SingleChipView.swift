@@ -87,7 +87,7 @@ class SingleChipView: UIView {
     }
     
     @objc func removeChip() {
-        delegate?.removeChip(model: model)
+        delegate?.removeChip(singleChipModel: model)
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
