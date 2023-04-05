@@ -55,7 +55,7 @@ class SectionListViewModel {
         ])
         
         data[3].content.append(
-            SkillModel(skills: ["abc", "abcd", "ABCDE", "abcdef", "abcdefg", "abcdefgh", "abcdef ghijklmnop"]))
+            SkillModel(skills: ["abc", "abcd", "ABCDE", "abcdef", "abcdefg", "abcdefgh", "abcdef ghijklmnop","abc", "abcd", "ABCDE", "abcdef", "abcdefg", "abcdefgh", "abcdef ghijklmnop"].map({Skill.init(name: $0)})))
     }
     
     func fetchData() {
