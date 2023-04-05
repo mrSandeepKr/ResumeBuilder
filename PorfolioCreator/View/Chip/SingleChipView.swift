@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-protocol SingleChipViewProtocol {
-    func removeChip(singleChipModel: SingleChipModel)
-}
-
 class SingleChipView: UIView {
     let model: SingleChipModel
     
@@ -39,7 +35,7 @@ class SingleChipView: UIView {
         super.init(frame: .zero)
         
         dismissButton.isHidden = !model.isDismissable
-        textLabel.text = model.labelText
+        textLabel.text = model.skill.name
         backgroundColor = model.color
         
         addSubview(textLabel)

@@ -30,6 +30,8 @@
 		6DE0F90829DC311C00812097 /* EducationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90729DC311C00812097 /* EducationListViewModel.swift */; };
 		6DE0F90A29DC312900812097 /* ExperienceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90929DC312900812097 /* ExperienceListViewModel.swift */; };
 		6DE0F90C29DC66B100812097 /* SingleChipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90B29DC66B100812097 /* SingleChipModel.swift */; };
+		6DE0F90E29DC9EE800812097 /* SkillsEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90D29DC9EE700812097 /* SkillsEditViewModel.swift */; };
+		6DE0F91029DCA25400812097 /* SingleChipViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0F90F29DCA25400812097 /* SingleChipViewProtocol.swift */; };
 		6DE47CE229D1DBFA00F38FCD /* SectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE129D1DBFA00F38FCD /* SectionListViewController.swift */; };
 		6DE47CE729D22B5900F38FCD /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE629D22B5900F38FCD /* SectionType.swift */; };
 		6DE47CE929D22B9000F38FCD /* ExperienceSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE47CE829D22B9000F38FCD /* ExperienceSectionTableViewCell.swift */; };
@@ -70,6 +72,8 @@
 		6DE0F90729DC311C00812097 /* EducationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationListViewModel.swift; sourceTree = "<group>"; };
 		6DE0F90929DC312900812097 /* ExperienceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceListViewModel.swift; sourceTree = "<group>"; };
 		6DE0F90B29DC66B100812097 /* SingleChipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChipModel.swift; sourceTree = "<group>"; };
+		6DE0F90D29DC9EE700812097 /* SkillsEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsEditViewModel.swift; sourceTree = "<group>"; };
+		6DE0F90F29DCA25400812097 /* SingleChipViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChipViewProtocol.swift; sourceTree = "<group>"; };
 		6DE47CE129D1DBFA00F38FCD /* SectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListViewController.swift; sourceTree = "<group>"; };
 		6DE47CE629D22B5900F38FCD /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
 		6DE47CE829D22B9000F38FCD /* ExperienceSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceSectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				6DE0F8F929D9A16F00812097 /* FormViewModel.swift */,
 				6DE0F90729DC311C00812097 /* EducationListViewModel.swift */,
 				6DE0F90929DC312900812097 /* ExperienceListViewModel.swift */,
+				6DE0F90D29DC9EE700812097 /* SkillsEditViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				6DE0F90029DAAE0100812097 /* FormFieldContentProtocol.swift */,
+				6DE0F90F29DCA25400812097 /* SingleChipViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DE0F90E29DC9EE800812097 /* SkillsEditViewModel.swift in Sources */,
 				6DE0F8FA29D9A16F00812097 /* FormViewModel.swift in Sources */,
 				6DE0F8F329D8098F00812097 /* FormViewController.swift in Sources */,
 				6DE47CF729D2327E00F38FCD /* SectionListViewModel.swift in Sources */,
@@ -322,6 +329,7 @@
 				6DE47CE229D1DBFA00F38FCD /* SectionListViewController.swift in Sources */,
 				6DE47CED29D22BCE00F38FCD /* SkillSectionTableViewCell.swift in Sources */,
 				6DE47CEF29D22E0A00F38FCD /* AboutSectionTableViewCell.swift in Sources */,
+				6DE0F91029DCA25400812097 /* SingleChipViewProtocol.swift in Sources */,
 				6DE47CEB29D22BAC00F38FCD /* EducationSectionTableViewCell.swift in Sources */,
 				6DE47CE929D22B9000F38FCD /* ExperienceSectionTableViewCell.swift in Sources */,
 				6D849F5C29CF53630041685D /* AppDelegate.swift in Sources */,

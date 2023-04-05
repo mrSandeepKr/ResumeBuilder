@@ -7,12 +7,20 @@
 
 import Foundation
 
-class SkillModel: SectionBaseModel {
-    let skills: [String]
+class Skill {
+    let name: String
     
-    init(skills: [String]) {
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class SkillModel: SectionBaseModel {
+    let skills: [Skill]
+
+    init(skills: [Skill]) {
         self.skills = skills
-        
+
         super.init(sectionType: .Skills)
     }
 }

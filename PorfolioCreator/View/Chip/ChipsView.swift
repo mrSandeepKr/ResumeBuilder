@@ -30,25 +30,27 @@ struct ChipsModel {
     }
 }
 
+protocol ChipsViewProtocol {
+    func removeChip(singleChipModel: SingleChipModel)
+}
+
 class ChipsView: UIView {
-    var model: ChipsModel
-    lazy var xPos: CGFloat = model.viewLeftMargin
-    lazy var yPos: CGFloat = model.chipVerticalMargin
-    lazy var maxY: CGFloat = yPos
+    var maxY: CGFloat = 0
+    var delegate: ChipsViewProtocol?
     
-    init(model: ChipsModel) {
-        self.model = model
+    init() {
         super.init(frame: .zero)
-        
-        buildChipView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func buildChipView() {
+    func buildChipView(model: ChipsModel) {
         subviews.forEach({$0.removeFromSuperview()})
+        
+        var xPos: CGFloat = model.viewLeftMargin
+        var yPos: CGFloat = model.chipVerticalMargin
         
         for singleChipModel in model.singleChipModels {
             let chipView = SingleChipView(model: singleChipModel)
@@ -76,9 +78,7 @@ class ChipsView: UIView {
 
 extension ChipsView: SingleChipViewProtocol {
     func removeChip(singleChipModel: SingleChipModel) {
-        model.singleChipModels.removeAll(where: { $0.labelText == singleChipModel.labelText})
-        
-        buildChipView()
+        delegate?.removeChip(singleChipModel: singleChipModel)
     }
 }
 

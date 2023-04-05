@@ -8,8 +8,18 @@
 import UIKit
 
 class SkillSectionTableViewCell: UITableViewCell {
+    let chipsView: ChipsView = {
+        let view = ChipsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(chipsView)
+        NSLayoutConstraint.constraintEdges(view: chipsView, parentView: contentView)
     }
     
     required init?(coder: NSCoder) {
@@ -17,34 +27,17 @@ class SkillSectionTableViewCell: UITableViewCell {
     }
     
     func configureCell(model: SkillModel) {
-        contentView.subviews.forEach({$0.removeFromSuperview()})
+        chipsView.buildChipView(model: ChipsModel.init(singleChipModels: model.skills.map({getChipModel(skill: $0)}), viewRightMargin: 10))
         
-        let chipsView = ChipsView(model: ChipsModel.init(singleChipModels: model.skills.map({getChipModel(skill: $0)})))
-        chipsView.translatesAutoresizingMaskIntoConstraints = false
-        
-        contentView.addSubview(chipsView)
-        NSLayoutConstraint.activate(getStaticConstraints(heightConstant: chipsView.getApproxHeight(), chipsView: chipsView))
-    }
-    
-    func getStaticConstraints(heightConstant: CGFloat, chipsView: ChipsView) -> [NSLayoutConstraint] {
-        var constraints = [NSLayoutConstraint]()
-        
-        let heightAnchor = chipsView.heightAnchor.constraint(equalToConstant: heightConstant)
+        let heightAnchor = contentView.constraints.first(where: { $0.firstAttribute == .height}) ?? contentView.heightAnchor.constraint(equalToConstant: chipsView.getApproxHeight())
+        heightAnchor.constant = chipsView.getApproxHeight()
         heightAnchor.priority = UILayoutPriority(999)
-        constraints.append(contentsOf: [
-            chipsView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            chipsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            heightAnchor,
-            chipsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            chipsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-        
-        return  constraints
+        heightAnchor.isActive = true
     }
     
-    func getChipModel(skill: String) -> SingleChipModel {
-        return SingleChipModel(labelText: skill,
-                                 isDismissable: true,
+    func getChipModel(skill: Skill) -> SingleChipModel {
+        return SingleChipModel(skill: skill,
+                                 isDismissable: false,
                                  color: .gray,
                                  horizontalMargin: 5,
                                  verticalMargin: 5,

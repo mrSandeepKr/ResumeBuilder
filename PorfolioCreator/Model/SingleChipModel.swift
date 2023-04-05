@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct SingleChipModel {
-    let labelText: String
+    let skill: Skill
     let isDismissable: Bool
     let color: UIColor
     let horizontalMargin: CGFloat
@@ -18,7 +18,7 @@ struct SingleChipModel {
     let fontSize: CGFloat
     let buttonMargin: CGFloat
     
-    init(labelText: String,
+    init(skill: Skill,
          isDismissable: Bool,
          color: UIColor,
          horizontalMargin: CGFloat = 5,
@@ -26,7 +26,7 @@ struct SingleChipModel {
          cornerRadius: CGFloat = 5 ,
          fontSize: CGFloat = 5,
          buttonMargin: CGFloat = 3) {
-        self.labelText = labelText
+        self.skill = skill
         self.isDismissable = isDismissable
         self.color = color
         self.horizontalMargin = horizontalMargin

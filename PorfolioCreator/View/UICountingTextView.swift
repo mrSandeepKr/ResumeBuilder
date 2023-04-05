@@ -11,13 +11,12 @@ import UIKit
 class UICountingTextView: UIView {
     let labelHeight: CGFloat
     var maxCharCount: Int
+    let countingLabelTopMargin: CGFloat = 2
     
     let contentTextView: UITextView = {
         let textView = UITextView()
         textView.textContainerInset = .zero
         textView.translatesAutoresizingMaskIntoConstraints = false
-        
-        textView.textContainerInset = UIEdgeInsets(top: 7, left: 2, bottom: 5, right: 2)
         
         textView.layer.borderColor = UIColor.black.cgColor
         textView.layer.borderWidth = 1
@@ -28,13 +27,13 @@ class UICountingTextView: UIView {
     
     let countingLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont.systemFont(ofSize: 11)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
         return label
     }()
     
-    init(labelHeight: CGFloat = 15, maxCharCount: Int = 200) {
+    init(labelHeight: CGFloat = 12, maxCharCount: Int = 200) {
         self.labelHeight = labelHeight
         self.maxCharCount = maxCharCount
         
@@ -58,7 +57,7 @@ class UICountingTextView: UIView {
         constraints.append(contentsOf: [
             contentTextView.topAnchor.constraint(equalTo: topAnchor),
             contentTextView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentTextView.bottomAnchor.constraint(equalTo: countingLabel.topAnchor, constant: -5),
+            contentTextView.bottomAnchor.constraint(equalTo: countingLabel.topAnchor, constant: -2),
             contentTextView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         
@@ -70,6 +69,18 @@ class UICountingTextView: UIView {
         ])
         
         return constraints
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let height = frame.height - countingLabelTopMargin - (countingLabel.constraints.first(where: {$0.firstAttribute == .height})?.constant ?? 0)
+        let fontHeight = contentTextView.font?.lineHeight ?? height / 2
+        
+        contentTextView.textContainerInset = UIEdgeInsets(top: (height - fontHeight ) / 2, left: 5, bottom: 5, right: (height - fontHeight ) / 2)
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        contentTextView.becomeFirstResponder()
     }
 }
 
