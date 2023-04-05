@@ -56,7 +56,16 @@ class FormViewController: UIViewController {
         view.addSubview(saveButton)
         saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "xmark"),
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(dismissViewController))
+        
         NSLayoutConstraint.activate(staticConstraints)
+    }
+    
+    @objc func dismissViewController() {
+        dismiss(animated: true)
     }
     
     var staticConstraints: [NSLayoutConstraint] {

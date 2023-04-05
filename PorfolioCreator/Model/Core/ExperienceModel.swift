@@ -10,7 +10,7 @@
 
 import Foundation
 
-public class ExperienceModel: SectionBaseModel {
+public class ExperienceModel {
     let companyName: String
     let designation: String
     let roleDescription: String
@@ -27,7 +27,5 @@ public class ExperienceModel: SectionBaseModel {
         self.endDate = endDate
         self.isPresent = isPresent
         self.skills = skills
-        
-        super.init(sectionType: .Experience)
     }
 }

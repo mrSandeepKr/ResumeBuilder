@@ -8,6 +8,8 @@
 import UIKit
 
 class EducationSectionTableViewCell: UITableViewCell {
+    public var buttonClickCallback: (() -> Void)?
+    
     let educationImageiew: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +57,7 @@ class EducationSectionTableViewCell: UITableViewCell {
         contentView.addSubview(skillsTextView)
         
         NSLayoutConstraint.activate(staticConstraints)
+        editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -127,5 +130,9 @@ class EducationSectionTableViewCell: UITableViewCell {
         if !showEditButton {
             editButton.isHidden = true
         }
+    }
+    
+    @objc func editButtonClicked() {
+        buttonClickCallback?()
     }
 }

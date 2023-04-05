@@ -113,7 +113,7 @@ class SkillsEditViewController: UIViewController {
         }
     }
     
-    func getChipModel(_ skill: Skill) -> SingleChipModel {
+    func getChipModel(_ skill: SkillModel) -> SingleChipModel {
         return SingleChipModel(skill: skill,
                                  isDismissable: true,
                                  color: .gray,

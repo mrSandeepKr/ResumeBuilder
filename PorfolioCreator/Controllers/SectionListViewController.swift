@@ -12,7 +12,7 @@ class SectionListViewController: UIViewController {
     let viewModel = SectionListViewModel()
     
     let sectionsTableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView.register(ExperienceSectionTableViewCell.self, forCellReuseIdentifier: ExperienceSectionTableViewCell.reusableIdentifier)
@@ -22,6 +22,8 @@ class SectionListViewController: UIViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
+        tableView.separatorStyle = .none
+        
         return tableView
     }()
     
@@ -91,7 +93,7 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
             
         case .Skills:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SkillSectionTableViewCell.reusableIdentifier, for: indexPath) as? SkillSectionTableViewCell,
-                  let model = viewModel.data[indexPath.section].content[indexPath.row] as? SkillModel
+                  let model = viewModel.data[indexPath.section].content[indexPath.row] as? SkillSectionModel
             else {
                 return UITableViewCell()
             }
@@ -102,6 +104,7 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        view.backgroundColor = .systemBackground
         
         let buttonSize = 40
         let button = UIButton(frame: CGRect(x: Int(tableView.frame.width) - 40 - 10, y: 5, width: buttonSize, height: buttonSize))
@@ -144,8 +147,11 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
             vc = SkillsEditViewController()
         }
         
+        vc!.navigationItem.largeTitleDisplayMode = .always
         let nav = UINavigationController.init(rootViewController: vc!)
+        
         nav.modalPresentationStyle = .fullScreen
+        nav.navigationBar.prefersLargeTitles = true
         navigationController?.present(nav, animated: true)
     }
 }

@@ -26,7 +26,7 @@ class SkillSectionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell(model: SkillModel) {
+    func configureCell(model: SkillSectionModel) {
         chipsView.buildChipView(model: ChipsModel.init(singleChipModels: model.skills.map({getChipModel(skill: $0)}), viewRightMargin: 10))
         
         let heightAnchor = contentView.constraints.first(where: { $0.firstAttribute == .height}) ?? contentView.heightAnchor.constraint(equalToConstant: chipsView.getApproxHeight())
@@ -35,7 +35,7 @@ class SkillSectionTableViewCell: UITableViewCell {
         heightAnchor.isActive = true
     }
     
-    func getChipModel(skill: Skill) -> SingleChipModel {
+    func getChipModel(skill: SkillModel) -> SingleChipModel {
         return SingleChipModel(skill: skill,
                                  isDismissable: false,
                                  color: .gray,

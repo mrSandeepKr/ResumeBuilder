@@ -8,11 +8,11 @@
 import Foundation
 
 class SectionListViewModel {
-    var data = [SectionListDataModel]()
+    var data = [SectionBaseModel]()
     
     init() {
         data = SectionType.allCases.map { sectionType in
-            SectionListDataModel(sectionType: sectionType,content: [SectionBaseModel]())
+            SectionBaseModel(sectionType: sectionType,content: [AnyObject]())
         }
         
         data[0].content.append(AboutModel(aboutText: "THis is the about section shit I was talkingabout. I am working with Google and was prior working at Microsoft. It has been a long time working here as am mobile engineer. It has been sometime since I worked at iOS development. Apart from this I have also wroked as an Android Engineer."))
@@ -55,10 +55,18 @@ class SectionListViewModel {
         ])
         
         data[3].content.append(
-            SkillModel(skills: ["abc", "abcd", "ABCDE", "abcdef", "abcdefg", "abcdefgh", "abcdef ghijklmnop","abc", "abcd", "ABCDE", "abcdef", "abcdefg", "abcdefgh", "abcdef ghijklmnop"].map({Skill.init(name: $0)})))
+            SkillSectionModel(skills: ["abc", "abcd", "ABCDE", "abcdef", "abcdefg", "abcdefgh", "abcdef ghijklmnop","abc", "abcd", "ABCDE", "abcdef", "abcdefg", "abcdefgh", "abcdef ghijklmnop"].map({SkillModel.init(name: $0)})))
     }
     
     func fetchData() {
         // make the data base call
+    }
+}
+
+class SkillSectionModel {
+    let skills: [SkillModel]
+    
+    init(skills: [SkillModel]) {
+        self.skills = skills
     }
 }

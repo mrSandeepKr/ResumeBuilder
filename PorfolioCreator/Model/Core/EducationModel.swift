@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EducationModel: SectionBaseModel {
+class EducationModel {
     let institution: String
     let degree: String
     let fieldOfStudy: String
@@ -26,7 +26,5 @@ class EducationModel: SectionBaseModel {
         self.grade = grade
         self.description = description
         self.skills = skills
-        
-        super.init(sectionType: .Education)
     }
 }

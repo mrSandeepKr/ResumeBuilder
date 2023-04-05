@@ -7,12 +7,10 @@
 
 import Foundation
 
-class AboutModel: SectionBaseModel {
+class AboutModel {
     let aboutText: String
     
     init(aboutText: String) {
         self.aboutText = aboutText
-        
-        super.init(sectionType: .About)
     }
 }

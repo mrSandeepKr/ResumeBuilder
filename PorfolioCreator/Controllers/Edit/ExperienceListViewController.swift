@@ -24,6 +24,10 @@ class ExperienceListViewContoller: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Experience"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissViewController))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "plus"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(launchEmptyFormViewController))
         
         Task.init {
             await viewModel.fetchData()
@@ -56,7 +60,29 @@ extension ExperienceListViewContoller: UITableViewDelegate, UITableViewDataSourc
         }
         
         cell.configureCell(model: viewModel.content[indexPath.row], showEditButton: true)
+        cell.callback = {[weak self] in
+            self?.launchFormViewController(experienceModel: nil)
+        }
+        
         return cell
+    }
+    
+    @objc func launchEmptyFormViewController() {
+        launchFormViewController(experienceModel: nil)
+    }
+    
+    func launchFormViewController(experienceModel: ExperienceModel?) {
+        let vc = FormViewController(viewModel:
+                                        FormViewModel.init(title: "Experiencee",
+                                                           fields: [FormTextInputCellModel.init(cellLabel: "Company Name",
+                                                                                                maximumNumberOfLines: 1)]))
+        vc.navigationItem.largeTitleDisplayMode = .always
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        nav.navigationBar.prefersLargeTitles = true
+        
+        navigationController?.present(nav, animated: true)
     }
 }
 

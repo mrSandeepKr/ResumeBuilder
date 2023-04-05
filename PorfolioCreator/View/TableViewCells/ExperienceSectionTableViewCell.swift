@@ -8,7 +8,7 @@
 import UIKit
 
 class ExperienceSectionTableViewCell: UITableViewCell {
-    
+    var callback: (() -> Void)?
     var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM yyyy"
@@ -188,6 +188,6 @@ class ExperienceSectionTableViewCell: UITableViewCell {
     }
     
     @objc func editButtonClicked() {
-        
+        callback?()
     }
 }
