@@ -15,7 +15,8 @@ class SkillsEditViewController: UIViewController {
         let countingTextView = UICountingTextView(maxCharCount: 60)
         countingTextView.translatesAutoresizingMaskIntoConstraints = false
         countingTextView.contentTextView.font = UIFont.systemFont(ofSize: 15)
-        countingTextView.contentTextView.textContainerInset = UIEdgeInsets(top: 5, left: 7, bottom: 7, right: 7)
+        countingTextView.verticalCenterAlignment = true
+        
         return countingTextView
     }()
     
@@ -64,7 +65,7 @@ class SkillsEditViewController: UIViewController {
             skillsInputTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             skillsInputTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: viewSideMargin),
             skillsInputTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            skillsInputTextView.heightAnchor.constraint(equalToConstant: 60)
+            skillsInputTextView.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         constraints.append(contentsOf: [

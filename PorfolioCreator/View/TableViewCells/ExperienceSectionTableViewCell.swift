@@ -8,6 +8,13 @@
 import UIKit
 
 class ExperienceSectionTableViewCell: UITableViewCell {
+    
+    var dateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM yyyy"
+        return dateFormatter
+    }
+    
     let jobLogoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +94,8 @@ class ExperienceSectionTableViewCell: UITableViewCell {
         contentView.addSubview(editButton)
         
         NSLayoutConstraint.activate(staticConstraints)
+        
+        editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -178,9 +187,7 @@ class ExperienceSectionTableViewCell: UITableViewCell {
         }
     }
     
-    var dateFormatter: DateFormatter {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM yyyy"
-        return dateFormatter
+    @objc func editButtonClicked() {
+        
     }
 }

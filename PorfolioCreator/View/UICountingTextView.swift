@@ -12,6 +12,7 @@ class UICountingTextView: UIView {
     let labelHeight: CGFloat
     var maxCharCount: Int
     let countingLabelTopMargin: CGFloat = 2
+    var verticalCenterAlignment: Bool = false
     
     let contentTextView: UITextView = {
         let textView = UITextView()
@@ -73,10 +74,12 @@ class UICountingTextView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let height = frame.height - countingLabelTopMargin - (countingLabel.constraints.first(where: {$0.firstAttribute == .height})?.constant ?? 0)
-        let fontHeight = contentTextView.font?.lineHeight ?? height / 2
         
-        contentTextView.textContainerInset = UIEdgeInsets(top: (height - fontHeight ) / 2, left: 5, bottom: 5, right: (height - fontHeight ) / 2)
+        if verticalCenterAlignment {
+            let height = frame.height - countingLabelTopMargin - (countingLabel.constraints.first(where: {$0.firstAttribute == .height})?.constant ?? 0)
+            let fontHeight = contentTextView.font?.lineHeight ?? height / 2
+            contentTextView.textContainerInset = UIEdgeInsets(top: (height - fontHeight ) / 2, left: 5, bottom: 5, right: (height - fontHeight ) / 2)
+        }
     }
     
     override func becomeFirstResponder() -> Bool {

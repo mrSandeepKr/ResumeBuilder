@@ -15,6 +15,7 @@ class AboutEditViewController: UIViewController {
     let aboutTextView: UICountingTextView = {
         let textView = UICountingTextView(maxCharCount: 50)
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.contentTextView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         
         return textView
     }()
