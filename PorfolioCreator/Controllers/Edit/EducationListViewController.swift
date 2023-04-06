@@ -75,10 +75,7 @@ extension EducationListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func launchFormViewController(experienceModel: ExperienceModel?) {
-        let vc = FormViewController(viewModel:
-                                        FormViewModel.init(title: "Education",
-                                                           fields: [FormTextInputCellModel.init(cellLabel: "Institution name",
-                                                                                                maximumNumberOfLines: 1)]))
+        let vc = EducationEditViewController()
         vc.navigationItem.largeTitleDisplayMode = .always
         
         let nav = UINavigationController(rootViewController: vc)

@@ -13,10 +13,10 @@ class AboutEditViewModel {
 
 class AboutEditViewController: UIViewController {
     let aboutTextView: UICountingTextView = {
-        let textView = UICountingTextView(maxCharCount: 50)
+        let textView = UICountingTextView(maxCharCount: 50, showCharCount: true)
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.contentTextView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        
+        textView.numberOfVisibleLines = 19
         return textView
     }()
     

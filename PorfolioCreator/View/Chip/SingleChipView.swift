@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol SingleChipViewProtocol {
+    func removeChip(singleChipModel: SingleChipModel)
+}
+
 class SingleChipView: UIView {
     let model: SingleChipModel
     

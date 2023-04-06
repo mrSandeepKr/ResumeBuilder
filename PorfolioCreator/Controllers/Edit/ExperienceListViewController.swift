@@ -72,10 +72,7 @@ extension ExperienceListViewContoller: UITableViewDelegate, UITableViewDataSourc
     }
     
     func launchFormViewController(experienceModel: ExperienceModel?) {
-        let vc = FormViewController(viewModel:
-                                        FormViewModel.init(title: "Experiencee",
-                                                           fields: [FormTextInputCellModel.init(cellLabel: "Company Name",
-                                                                                                maximumNumberOfLines: 1)]))
+        let vc = ExperienceEditViewController()
         vc.navigationItem.largeTitleDisplayMode = .always
         
         let nav = UINavigationController(rootViewController: vc)

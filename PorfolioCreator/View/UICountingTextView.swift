@@ -9,10 +9,25 @@ import Foundation
 import UIKit
 
 class UICountingTextView: UIView {
-    let labelHeight: CGFloat
-    var maxCharCount: Int
+    let countingLabelHeight: CGFloat
+    let headingLabelHeight: CGFloat
+    let maxCharCount: Int
+    let showHeading: Bool
+    let showCharCount: Bool
+    
+    let headingLabelBottomMargin: CGFloat = 0
     let countingLabelTopMargin: CGFloat = 2
-    var verticalCenterAlignment: Bool = false
+    
+    var numberOfVisibleLines: Float = 1
+    
+    // MARK: Subviews
+    let headingLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.textAlignment = .natural
+        return label
+    }()
     
     let contentTextView: UITextView = {
         let textView = UITextView()
@@ -34,18 +49,29 @@ class UICountingTextView: UIView {
         return label
     }()
     
-    init(labelHeight: CGFloat = 12, maxCharCount: Int = 200) {
-        self.labelHeight = labelHeight
+    // MARK: initializers
+    init(countingLabelHeight: CGFloat = 12,
+         headingLabelHeight: CGFloat = 11,
+         maxCharCount: Int = 200,
+         showHeading: Bool = false,
+         showCharCount: Bool = false) {
+        self.countingLabelHeight = countingLabelHeight
+        self.headingLabelHeight = headingLabelHeight
         self.maxCharCount = maxCharCount
+        self.showHeading = showHeading
+        self.showCharCount = showCharCount
         
         super.init(frame: .zero)
         
-        addSubview(contentTextView)
-        addSubview(countingLabel)
-        updateTextCount()
-        contentTextView.delegate = self
-        
+        addSubviews([contentTextView, countingLabel, headingLabel])
         NSLayoutConstraint.activate(staticConstraints)
+        
+        headingLabel.isHidden = !showHeading
+        countingLabel.isHidden = !showCharCount
+        
+        updateTextCount()
+        
+        contentTextView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -56,30 +82,49 @@ class UICountingTextView: UIView {
         var constraints = [NSLayoutConstraint]()
         
         constraints.append(contentsOf: [
-            contentTextView.topAnchor.constraint(equalTo: topAnchor),
-            contentTextView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentTextView.bottomAnchor.constraint(equalTo: countingLabel.topAnchor, constant: -2),
-            contentTextView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            headingLabel.topAnchor.constraint(equalTo: topAnchor),
+            headingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            headingLabel.heightAnchor.constraint(equalToConstant: headingLabelHeight),
+            headingLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            headingLabel.bottomAnchor.constraint(equalTo: contentTextView.topAnchor, constant: headingLabelBottomMargin)
         ])
         
         constraints.append(contentsOf: [
-            countingLabel.heightAnchor.constraint(equalToConstant: labelHeight),
+            countingLabel.topAnchor.constraint(equalTo: contentTextView.bottomAnchor, constant: countingLabelTopMargin),
             countingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            countingLabel.heightAnchor.constraint(equalToConstant: countingLabelHeight),
             countingLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             countingLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
         ])
         
+        constraints.append(contentsOf: [
+            contentTextView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentTextView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+        
+        constraints.forEach { constraint in
+            if constraint.firstAttribute == .height {
+                constraint.priority = UILayoutPriority(999)
+            }
+        }
+        
         return constraints
     }
     
+    
+    // MARK: Overrides
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if verticalCenterAlignment {
-            let height = frame.height - countingLabelTopMargin - (countingLabel.constraints.first(where: {$0.firstAttribute == .height})?.constant ?? 0)
-            let fontHeight = contentTextView.font?.lineHeight ?? height / 2
-            contentTextView.textContainerInset = UIEdgeInsets(top: (height - fontHeight ) / 2, left: 5, bottom: 5, right: (height - fontHeight ) / 2)
-        }
+        let verticalTextInset: CGFloat = 4
+        let textViewHeight = frame.height - (showCharCount ? countingLabelHeight + countingLabelTopMargin : 0) - (showHeading ? headingLabelHeight + headingLabelBottomMargin : 0)
+        contentTextView.textContainerInset = UIEdgeInsets.init(top: verticalTextInset, left: 4, bottom: verticalTextInset, right: 4)
+        
+        let singleLineHeight = (Float(textViewHeight)/numberOfVisibleLines) - 2
+        contentTextView.font = UIFont.systemFont(ofSize: CGFloat(singleLineHeight / 1.22))
+        
+        headingLabel.font = UIFont.systemFont(ofSize: CGFloat(headingLabelHeight / 1.22))
+        countingLabel.font = UIFont.systemFont(ofSize: CGFloat(countingLabelHeight / 1.22))
     }
     
     override func becomeFirstResponder() -> Bool {
@@ -108,13 +153,22 @@ extension UICountingTextView: UITextViewDelegate {
     }
 }
 
-extension UICountingTextView: FormFieldContentProtocol {
+extension UICountingTextView {
     public var contentValue: String {
         get {
             return contentTextView.text ?? ""
         }
         set {
             contentTextView.text = newValue
+        }
+    }
+    
+    public var headingText: String {
+        get {
+            return headingLabel.text ?? ""
+        }
+        set {
+            headingLabel.text = newValue
         }
     }
 }
