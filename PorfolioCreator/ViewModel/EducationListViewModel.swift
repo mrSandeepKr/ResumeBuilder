@@ -19,7 +19,8 @@ class EducationListViewModel {
                                 endDate: Date(),
                                 grade: "10 CGPA",
                                 description: "Did something something here.",
-                                skills: ["Something", "Nothing", "Today"]),
+                                skills: ["Something", "Nothing", "Today"],
+                               isPresent: false),
             EducationModel.init(institution: "DPS Ranchi",
                                 degree: "Senior Secondary",
                                 fieldOfStudy: "PCM",
@@ -27,7 +28,8 @@ class EducationListViewModel {
                                 endDate: Date(),
                                 grade: "10 CGPA",
                                 description: "Did something something here.",
-                                skills: ["Something", "Nothing", "Today"]),
+                                skills: ["Something", "Nothing", "Today"],
+                                isPresent: false),
             EducationModel.init(institution: "DPS Ranchi",
                                 degree: "Senior Secondary",
                                 fieldOfStudy: "PCM",
@@ -35,7 +37,8 @@ class EducationListViewModel {
                                 endDate: Date(),
                                 grade: "10 CGPA",
                                 description: "Did something something here.",
-                                skills: ["Something", "Nothing", "Today"])
+                                skills: ["Something", "Nothing", "Today"],
+                                isPresent: false)
         ]
     }
 }

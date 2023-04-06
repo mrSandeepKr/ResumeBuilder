@@ -16,8 +16,9 @@ class EducationModel {
     let grade: String
     let description: String
     let skills: [String]
+    let isPresent: Bool
     
-    init(institution: String, degree: String, fieldOfStudy: String, startDate: Date, endDate: Date, grade: String, description: String, skills: [String]) {
+    init(institution: String, degree: String, fieldOfStudy: String, startDate: Date, endDate: Date, grade: String, description: String, skills: [String], isPresent: Bool) {
         self.institution = institution
         self.degree = degree
         self.fieldOfStudy = fieldOfStudy
@@ -26,5 +27,6 @@ class EducationModel {
         self.grade = grade
         self.description = description
         self.skills = skills
+        self.isPresent = isPresent
     }
 }

@@ -40,7 +40,8 @@ class SectionListViewModel {
                                 endDate: Date(),
                                 grade: "10 CGPA",
                                 description: "Did something something here.",
-                                skills: ["Something", "Nothing", "Today"])
+                                skills: ["Something", "Nothing", "Today"],
+                               isPresent: false)
         ])
         
         data[2].content.append(contentsOf: [
@@ -51,7 +52,8 @@ class SectionListViewModel {
                                 endDate: Date(),
                                 grade: "10 CGPA",
                                 description: "Did something something here.",
-                                skills: ["Something", "Nothing", "Today"])
+                                skills: ["Something", "Nothing", "Today"],
+                                isPresent: false)
         ])
         
         data[3].content.append(

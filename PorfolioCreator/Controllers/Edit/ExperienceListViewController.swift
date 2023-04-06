@@ -8,7 +8,7 @@
 import UIKit
 
 class ExperienceListViewContoller: UIViewController {
-    let viewModel: ExperienceEditViewModel = ExperienceEditViewModel()
+    let viewModel: ExperienceListViewModel = ExperienceListViewModel()
     
     let tableView: UITableView = {
         let tableView = UITableView()

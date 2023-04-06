@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
         
-        let nav = UINavigationController(rootViewController: ExperienceEditViewController())
+        let nav = UINavigationController(rootViewController: SectionListViewController())
         nav.navigationBar.prefersLargeTitles = true
         nav.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
         window.rootViewController = nav

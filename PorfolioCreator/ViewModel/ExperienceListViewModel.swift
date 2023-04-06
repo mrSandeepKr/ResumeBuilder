@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ExperienceEditViewModel {
+class ExperienceListViewModel {
     var content: [ExperienceModel] = [ExperienceModel]()
     
     public func fetchData() async {

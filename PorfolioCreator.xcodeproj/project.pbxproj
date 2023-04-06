@@ -14,6 +14,8 @@
 		6D1BD84C29D6D44900570C46 /* SkillsEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD84B29D6D44900570C46 /* SkillsEditViewController.swift */; };
 		6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */; };
 		6D1BD85229D7F3ED00570C46 /* UIDateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */; };
+		6D4B63C429DEC40C00A89FD8 /* ExperienceEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63C329DEC40C00A89FD8 /* ExperienceEditViewModel.swift */; };
+		6D4B63C629DEC41600A89FD8 /* EducationEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63C529DEC41600A89FD8 /* EducationEditViewModel.swift */; };
 		6D849F5C29CF53630041685D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F5B29CF53630041685D /* AppDelegate.swift */; };
 		6D849F5E29CF53630041685D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F5D29CF53630041685D /* SceneDelegate.swift */; };
 		6D849F6529CF53640041685D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D849F6429CF53640041685D /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		6D1BD84B29D6D44900570C46 /* SkillsEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsEditViewController.swift; sourceTree = "<group>"; };
 		6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICountingTextView.swift; sourceTree = "<group>"; };
 		6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDateTextView.swift; sourceTree = "<group>"; };
+		6D4B63C329DEC40C00A89FD8 /* ExperienceEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditViewModel.swift; sourceTree = "<group>"; };
+		6D4B63C529DEC41600A89FD8 /* EducationEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationEditViewModel.swift; sourceTree = "<group>"; };
 		6D849F5829CF53630041685D /* PorfolioCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PorfolioCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D849F5B29CF53630041685D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D849F5D29CF53630041685D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				6DE0F90729DC311C00812097 /* EducationListViewModel.swift */,
 				6DE0F90929DC312900812097 /* ExperienceListViewModel.swift */,
 				6DE0F90D29DC9EE700812097 /* SkillsEditViewModel.swift */,
+				6D4B63C329DEC40C00A89FD8 /* ExperienceEditViewModel.swift */,
+				6D4B63C529DEC41600A89FD8 /* EducationEditViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -322,9 +328,11 @@
 				6DE47CF729D2327E00F38FCD /* SectionListViewModel.swift in Sources */,
 				6D849F7429D0014F0041685D /* Extensions.swift in Sources */,
 				6D1BD84629D6D41700570C46 /* AboutEditViewController.swift in Sources */,
+				6D4B63C629DEC41600A89FD8 /* EducationEditViewModel.swift in Sources */,
 				6DE47CE729D22B5900F38FCD /* SectionType.swift in Sources */,
 				6DE0F90329DBF32E00812097 /* ChipsView.swift in Sources */,
 				6DE0F90A29DC312900812097 /* ExperienceListViewModel.swift in Sources */,
+				6D4B63C429DEC40C00A89FD8 /* ExperienceEditViewModel.swift in Sources */,
 				6D1BD84829D6D42E00570C46 /* ExperienceListViewController.swift in Sources */,
 				6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */,
 				6D1BD84A29D6D43B00570C46 /* EducationListViewController.swift in Sources */,
