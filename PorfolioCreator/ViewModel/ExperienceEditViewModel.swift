@@ -10,13 +10,11 @@ import Foundation
 import Foundation
 
 class ExperienceEditViewModel {
-    var experienceModel: ExperienceModel = ExperienceModel(companyName: "",
-                                                           designation: "",
-                                                           roleDescription: "",
-                                                           startDate: Date(),
-                                                           endDate: Date(),
-                                                           isPresent: false,
-                                                           skills: [])
+    var experienceModel: ExperienceModel
+    
+    init(experienceModel: ExperienceModel = ExperienceModel.defaultInstance) {
+        self.experienceModel = experienceModel
+    }
     
     func getData() async {}
     

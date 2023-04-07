@@ -8,8 +8,7 @@
 import UIKit
 
 class EducationEditViewController: UIViewController {
-    
-    let viewModel = EducationEditViewModel()
+    let viewModel: EducationEditViewModel
     
     let instituteNameTextView: UICountingTextView = {
         let textView = UICountingTextView(maxCharCount: 50, showHeading: true, showCharCount: true)
@@ -62,7 +61,8 @@ class EducationEditViewController: UIViewController {
         return textView
     }()
     
-    init() {
+    init(viewModel: EducationEditViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         
         view.backgroundColor = .systemBackground
@@ -79,6 +79,7 @@ class EducationEditViewController: UIViewController {
         NSLayoutConstraint.activate(staticConstraints)
         
         setUpBarButton()
+        updateFields()
     }
     
     func setUpBarButton() {
@@ -91,6 +92,16 @@ class EducationEditViewController: UIViewController {
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(saveInfoAction))
+    }
+    
+    func updateFields() {
+        instituteNameTextView.contentValue = viewModel.educationModel.institution
+        degreeTextView.contentValue = viewModel.educationModel.degree
+        fieldOfStudyTextView.contentValue = viewModel.educationModel.fieldOfStudy
+        startDateTextView.contentValue = viewModel.educationModel.startDate
+        endDateTextView.contentValue = viewModel.educationModel.endDate
+        descriptionTextView.contentValue = viewModel.educationModel.description
+        gradeTextView.contentValue = viewModel.educationModel.grade
     }
     
     @objc func dismissViewController() {

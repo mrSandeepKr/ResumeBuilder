@@ -8,19 +8,21 @@
 import Foundation
 
 class SkillsEditViewModel {
-    var skills: [SkillModel] = [SkillModel]()
-    
-    var removethisSkilltest = ["abc", "abcd", "ABCDE", "abcdef", "abcdefg", "abcdefgh", "abcdef ghijklmnop"]
+    var skills = [SkillModel]()
     
     func fetchAndUpdateSkills() async {
-        skills =  removethisSkilltest.map({SkillModel.init(name: $0)})
+        //
     }
     
     func removeSkill(skill: SkillModel) async {
-        removethisSkilltest.removeAll(where: {$0 == skill.name})
+        skills.removeAll(where: {$0.name == skill.name})
     }
     
     func addSkill(skillText: String) async {
-        removethisSkilltest.append(skillText)
+        if skills.contains(where: { $0.name == skillText}) {
+            return
+        }
+        
+        skills.append(SkillModel(name: skillText))
     }
 }

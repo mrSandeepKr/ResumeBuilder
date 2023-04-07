@@ -10,7 +10,7 @@ import UIKit
 
 class ExperienceEditViewController: UIViewController {
     
-    let viewModel = ExperienceEditViewModel()
+    let viewModel: ExperienceEditViewModel
     
     let companyNameTextView: UICountingTextView = {
         let textView = UICountingTextView(maxCharCount: 50, showHeading: true, showCharCount: true)
@@ -48,7 +48,8 @@ class ExperienceEditViewController: UIViewController {
         return textView
     }()
     
-    init() {
+    init(viewModel: ExperienceEditViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         
         view.backgroundColor = .systemBackground
@@ -58,6 +59,7 @@ class ExperienceEditViewController: UIViewController {
         NSLayoutConstraint.activate(staticConstraints)
         
         setUpBarButton()
+        updateFields()
     }
     
     func setUpBarButton() {
@@ -82,6 +84,14 @@ class ExperienceEditViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateFields() {
+        companyNameTextView.contentValue = viewModel.experienceModel.companyName
+        designationTextView.contentValue = viewModel.experienceModel.designation
+        startDateTextView.contentValue = viewModel.experienceModel.startDate
+        endDateTextView.contentValue = viewModel.experienceModel.endDate
+        roleDescriptionTextView.contentValue = viewModel.experienceModel.roleDescription
     }
     
     var staticConstraints: [NSLayoutConstraint] {

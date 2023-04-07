@@ -8,15 +8,11 @@
 import Foundation
 
 class EducationEditViewModel {
-    var educationModel: EducationModel = EducationModel(institution: "",
-                                                        degree: "",
-                                                        fieldOfStudy: "",
-                                                        startDate: Date(),
-                                                        endDate: Date(),
-                                                        grade: "",
-                                                        description: "",
-                                                        skills: [],
-                                                        isPresent: false)
+    var educationModel: EducationModel
+    
+    init(educationModel: EducationModel) {
+        self.educationModel = educationModel
+    }
     
     func getData() async {}
     

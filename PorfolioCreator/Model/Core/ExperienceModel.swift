@@ -28,4 +28,12 @@ public class ExperienceModel {
         self.isPresent = isPresent
         self.skills = skills
     }
+    
+    static let defaultInstance = ExperienceModel(companyName: "",
+                                                 designation: "",
+                                                 roleDescription: "",
+                                                 startDate: Date(),
+                                                 endDate: Date(),
+                                                 isPresent: false,
+                                                 skills: [])
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class SkillsEditViewController: UIViewController {
-    let viewModel = SkillsEditViewModel()
+    let viewModel: SkillsEditViewModel
     let viewSideMargin: CGFloat = 15
     
     let skillsInputTextView: UICountingTextView = {
@@ -36,6 +36,15 @@ class SkillsEditViewController: UIViewController {
         return view
     }()
     
+    init(viewModel: SkillsEditViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         view.backgroundColor = .systemBackground
         title = "Skills"
@@ -44,15 +53,11 @@ class SkillsEditViewController: UIViewController {
                                                            target: self,
                                                            action: #selector(dismissViewController))
         
-        view.addSubview(skillsInputTextView)
-        view.addSubview(addButton)
-        view.addSubview(chipsView)
+        view.addSubviews([skillsInputTextView, addButton, chipsView])
+        NSLayoutConstraint.activate(staticConstraints)
         
         chipsView.delegate = self
-        
         addButton.addTarget(self, action: #selector(addSkill), for: .touchUpInside)
-        
-        NSLayoutConstraint.activate(staticConstraints)
         
         updateChips()
     }

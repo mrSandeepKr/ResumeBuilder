@@ -29,4 +29,14 @@ class EducationModel {
         self.skills = skills
         self.isPresent = isPresent
     }
+    
+    static let defaultInstance = EducationModel(institution: "",
+                                                degree: "",
+                                                fieldOfStudy: "",
+                                                startDate: Date(),
+                                                endDate: Date(),
+                                                grade: "",
+                                                description: "",
+                                                skills: [],
+                                                isPresent: false)
 }

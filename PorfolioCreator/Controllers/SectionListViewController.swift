@@ -144,7 +144,8 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
         case .Education:
             vc = EducationListViewController()
         case .Skills:
-            vc = SkillsEditViewController()
+            let vm = SkillsEditViewModel()
+            vc = SkillsEditViewController(viewModel: vm)
         }
         
         vc!.navigationItem.largeTitleDisplayMode = .always
