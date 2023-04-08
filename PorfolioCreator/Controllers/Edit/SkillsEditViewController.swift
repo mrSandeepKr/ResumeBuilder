@@ -100,7 +100,8 @@ class SkillsEditViewController: UIViewController {
         
         Task.init {
             await viewModel.addSkill(skillText: skillsInputTextView.contentValue)
-            await MainActor.run(body: {
+            await MainActor.run(body: {[weak self] in
+                guard let self = self else {return}
                 skillsInputTextView.contentValue = ""
                 updateChips()
             })
@@ -110,8 +111,9 @@ class SkillsEditViewController: UIViewController {
     func updateChips() {
         Task.init {
             await viewModel.fetchAndUpdateSkills()
-            await MainActor.run(body: {
-                let singleChipsModels = viewModel.skills.map({getChipModel($0)})
+            await MainActor.run(body: {[weak self] in
+                guard let self = self else {return}
+                let singleChipsModels = viewModel.skills.map({self.getChipModel($0)})
                 chipsView.buildChipView(model: ChipsModel.init(singleChipModels: singleChipsModels, viewLeftMargin: viewSideMargin))
             })
         }

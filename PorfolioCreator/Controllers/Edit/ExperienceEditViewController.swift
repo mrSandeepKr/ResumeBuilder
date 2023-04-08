@@ -79,8 +79,18 @@ class ExperienceEditViewController: UIViewController {
     }
     
     @objc func saveInfoAction() {
-        
-    }
+        Task.init {[weak self] in
+            guard let self = self else {
+                return
+            }
+            await viewModel.updateInfo(companyName: companyNameTextView.contentValue,
+                                 designation: designationTextView.contentValue,
+                                 roleDescription: roleDescriptionTextView.contentValue,
+                                 startDate: startDateTextView.contentValue,
+                                 endDate: endDateTextView.contentValue,
+                                 isPresent: false,
+                                 skills: [])}
+        }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -90,8 +100,11 @@ class ExperienceEditViewController: UIViewController {
         companyNameTextView.contentValue = viewModel.experienceModel.companyName
         designationTextView.contentValue = viewModel.experienceModel.designation
         startDateTextView.contentValue = viewModel.experienceModel.startDate
-        endDateTextView.contentValue = viewModel.experienceModel.endDate
         roleDescriptionTextView.contentValue = viewModel.experienceModel.roleDescription
+        
+        if let endDate = viewModel.experienceModel.endDate {
+            endDateTextView.contentValue = endDate
+        }
     }
     
     var staticConstraints: [NSLayoutConstraint] {

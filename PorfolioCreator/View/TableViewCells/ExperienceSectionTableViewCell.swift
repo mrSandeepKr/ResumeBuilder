@@ -178,7 +178,10 @@ class ExperienceSectionTableViewCell: UITableViewCell {
     public func configureCell(model: ExperienceModel, showEditButton: Bool = false) {
         designationTextView.text = model.companyName
         jobTextView.text = model.designation
-        employmentTimeTextView.text = "\(dateFormatter.string(from: model.startDate)) - \(dateFormatter.string(from: model.endDate))"
+        employmentTimeTextView.text = Utils.getTimeLineString(startDate: model.startDate,
+                                                              endDate: model.endDate,
+                                                              isPresent: model.isPresent,
+                                                              dateFormatter: dateFormatter)
         roleDescriptionTextView.text = model.roleDescription
         skillsTextView.attributedText = Utils.getSkillAttributedString(skills: model.skills, fontSize: 13)
         

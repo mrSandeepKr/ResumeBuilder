@@ -99,9 +99,12 @@ class EducationEditViewController: UIViewController {
         degreeTextView.contentValue = viewModel.educationModel.degree
         fieldOfStudyTextView.contentValue = viewModel.educationModel.fieldOfStudy
         startDateTextView.contentValue = viewModel.educationModel.startDate
-        endDateTextView.contentValue = viewModel.educationModel.endDate
         descriptionTextView.contentValue = viewModel.educationModel.description
         gradeTextView.contentValue = viewModel.educationModel.grade
+        
+        if let endDate = viewModel.educationModel.endDate {
+            endDateTextView.contentValue = endDate
+        }
     }
     
     @objc func dismissViewController() {
@@ -109,7 +112,17 @@ class EducationEditViewController: UIViewController {
     }
     
     @objc func saveInfoAction() {
-        
+        Task.init {[weak self] in
+            guard let self = self else {return}
+            await viewModel.updateInfo(institution: self.instituteNameTextView.contentValue,
+                                       degree: self.degreeTextView.contentValue,
+                                       fieldOfStudy: self.fieldOfStudyTextView.contentValue,
+                                       startDate: self.startDateTextView.contentValue,
+                                       endDate: self.endDateTextView.contentValue,
+                                       isPresent: false,
+                                       grade: self.gradeTextView.contentValue,
+                                       description: self.descriptionTextView.contentValue)
+        }
     }
     
     required init?(coder: NSCoder) {

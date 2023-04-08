@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AboutModel {
+struct AboutModel {
     let aboutText: String
     
     init(aboutText: String) {

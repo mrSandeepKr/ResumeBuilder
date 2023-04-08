@@ -7,18 +7,29 @@
 
 import Foundation
 
-class EducationModel {
+struct EducationModel {
+    let id: UUID
     let institution: String
     let degree: String
     let fieldOfStudy: String
     let startDate: Date
-    let endDate: Date
+    let endDate: Date?
     let grade: String
     let description: String
     let skills: [String]
     let isPresent: Bool
     
-    init(institution: String, degree: String, fieldOfStudy: String, startDate: Date, endDate: Date, grade: String, description: String, skills: [String], isPresent: Bool) {
+    init(id: UUID = UUID(),
+         institution: String,
+         degree: String,
+         fieldOfStudy: String,
+         startDate: Date,
+         endDate: Date?,
+         grade: String,
+         description: String,
+         skills: [String],
+         isPresent: Bool) {
+        self.id = id
         self.institution = institution
         self.degree = degree
         self.fieldOfStudy = fieldOfStudy

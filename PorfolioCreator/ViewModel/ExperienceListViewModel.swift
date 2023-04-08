@@ -9,30 +9,9 @@ import Foundation
 
 class ExperienceListViewModel {
     var content: [ExperienceModel] = [ExperienceModel]()
+    let experienceRepository: ExperienceRepository = ExperienceDataRespository()
     
     public func fetchData() async {
-        content = [
-            ExperienceModel(companyName: "1st company name",
-                           designation: "1st designation ",
-                           roleDescription: "I worked as a mobile engineer building big reliable systems to help incorporate stuff into my day to day life style. I worked as a mobile engineer building big reliable systems to help incorporate stuff into my day to day life style.",
-                           startDate: Date(),
-                           endDate: Date(),
-                           isPresent: false,
-                           skills: ["Something", "Nothing", "Today"]),
-            ExperienceModel(companyName: "2nd company name",
-                           designation: "2nd Designation ",
-                           roleDescription: "I worked as a mobile engineer building big reliable systems to help incorporate stuff into my day to day life style. I worked as a mobile engineer building big reliable systems to help incorporate stuff into my day to day life style.",
-                           startDate: Date(),
-                           endDate: Date(),
-                           isPresent: false,
-                           skills: ["Something", "Nothing", "Today", "Today", "Today", "Today", "Today", "Today", "Today", "Today", "Today", "Today", "Today"]),
-            ExperienceModel(companyName: "2nd company name",
-                        designation: "2nd Designation ",
-                        roleDescription: "I worked as a mobile engineer building big reliable systems to help incorporate stuff into my day to day life style. I worked as a mobile engineer building big reliable systems to help incorporate stuff into my day to day life style.",
-                        startDate: Date(),
-                        endDate: Date(),
-                        isPresent: false,
-                        skills: ["Something", "Nothing", "Today", "Today", "Today", "Today", "Today", "Today", "Today", "Today", "Today", "Today", "Today"])
-        ]
+        content = experienceRepository.getAll() ?? []
     }
 }

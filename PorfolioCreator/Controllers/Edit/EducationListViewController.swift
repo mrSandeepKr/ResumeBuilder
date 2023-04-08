@@ -65,18 +65,18 @@ extension EducationListViewController: UITableViewDelegate, UITableViewDataSourc
         cell.configureCell(model: viewModel.content[indexPath.row], showEditButton: true)
         cell.buttonClickCallback = {[weak self] in
             guard let self = self else {return}
-            launchFormViewController(educationModel: viewModel.content[indexPath.row])
+            launchFormViewController(educationModel: viewModel.content[indexPath.row], isEmptyForm: false)
         }
         
         return cell
     }
     
     @objc func launchEmptyFormViewController() {
-        launchFormViewController(educationModel: EducationModel.defaultInstance)
+        launchFormViewController(educationModel: EducationModel.defaultInstance, isEmptyForm: true)
     }
     
-    func launchFormViewController(educationModel: EducationModel) {
-        let vc = EducationEditViewController(viewModel: EducationEditViewModel.init(educationModel: educationModel))
+    func launchFormViewController(educationModel: EducationModel, isEmptyForm: Bool) {
+        let vc = EducationEditViewController(viewModel: EducationEditViewModel.init(educationModel: educationModel, isEmptyForm: isEmptyForm))
         vc.navigationItem.largeTitleDisplayMode = .always
         
         let nav = UINavigationController(rootViewController: vc)

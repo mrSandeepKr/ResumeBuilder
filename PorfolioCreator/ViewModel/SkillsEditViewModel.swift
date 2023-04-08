@@ -8,21 +8,19 @@
 import Foundation
 
 class SkillsEditViewModel {
+    let skillRepository: SkillDataRepository = SkillDataRepository()
     var skills = [SkillModel]()
     
     func fetchAndUpdateSkills() async {
-        //
+        guard let skills = skillRepository.getAll() else {return}
+        self.skills = skills
     }
     
     func removeSkill(skill: SkillModel) async {
-        skills.removeAll(where: {$0.name == skill.name})
+        _ = skillRepository.delete(UUID())
     }
     
     func addSkill(skillText: String) async {
-        if skills.contains(where: { $0.name == skillText}) {
-            return
-        }
-        
-        skills.append(SkillModel(name: skillText))
+        skillRepository.create(skill: SkillModel.init(name: skillText))
     }
 }

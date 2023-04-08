@@ -62,18 +62,20 @@ extension ExperienceListViewContoller: UITableViewDelegate, UITableViewDataSourc
         cell.configureCell(model: viewModel.content[indexPath.row], showEditButton: true)
         cell.callback = {[weak self] in
             guard let self = self else {return}
-            launchFormViewController(experienceModel: viewModel.content[indexPath.row])
+            launchFormViewController(experienceModel: viewModel.content[indexPath.row],
+                                     isCreatingExperience: false)
         }
         
         return cell
     }
     
     @objc func launchEmptyFormViewController() {
-        launchFormViewController(experienceModel: ExperienceModel.defaultInstance)
+        launchFormViewController(experienceModel: ExperienceModel.defaultInstance,
+                                 isCreatingExperience: true)
     }
     
-    func launchFormViewController(experienceModel: ExperienceModel) {
-        let vc = ExperienceEditViewController(viewModel: ExperienceEditViewModel(experienceModel: experienceModel))
+    func launchFormViewController(experienceModel: ExperienceModel, isCreatingExperience: Bool) {
+        let vc = ExperienceEditViewController(viewModel: ExperienceEditViewModel(experienceModel: experienceModel, isCreatingExperience: isCreatingExperience))
         vc.navigationItem.largeTitleDisplayMode = .always
         
         let nav = UINavigationController(rootViewController: vc)

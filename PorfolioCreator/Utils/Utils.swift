@@ -27,4 +27,15 @@ class Utils {
         
         return  attributedString
     }
+    
+    static func getTimeLineString(startDate: Date , endDate: Date?, isPresent: Bool, dateFormatter: DateFormatter) -> String{
+        if isPresent {
+            return "\(dateFormatter.string(from: startDate)) - Present"
+        }
+        
+        if let endDate = endDate {
+            return "\(dateFormatter.string(from: startDate)) - \(dateFormatter.string(from: endDate))"
+        }
+        return ""
+    }
 }

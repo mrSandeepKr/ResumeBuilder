@@ -36,6 +36,15 @@ class SectionListViewController: UIViewController {
         sectionsTableView.delegate = self
         sectionsTableView.dataSource = self
         
+        Task.init {[weak self] in
+            guard let self = self else {return}
+            await viewModel.fetchData()
+            await MainActor.run(body: {[weak self] in
+                guard let self = self else {return}
+                self.sectionsTableView.reloadData()
+            })
+        }
+        
         NSLayoutConstraint.activate(staticConstraints)
     }
     

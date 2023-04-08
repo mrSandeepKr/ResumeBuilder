@@ -16,6 +16,20 @@
 		6D1BD85229D7F3ED00570C46 /* UIDateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */; };
 		6D4B63C429DEC40C00A89FD8 /* ExperienceEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63C329DEC40C00A89FD8 /* ExperienceEditViewModel.swift */; };
 		6D4B63C629DEC41600A89FD8 /* EducationEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63C529DEC41600A89FD8 /* EducationEditViewModel.swift */; };
+		6D4B63CD29E06AC800A89FD8 /* CDExperience+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63CB29E06AC800A89FD8 /* CDExperience+CoreDataClass.swift */; };
+		6D4B63CE29E06AC800A89FD8 /* CDExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63CC29E06AC800A89FD8 /* CDExperience+CoreDataProperties.swift */; };
+		6D4B63D129E06DAD00A89FD8 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63D029E06DAD00A89FD8 /* PersistentStorage.swift */; };
+		6D4B63D329E070C700A89FD8 /* ExperienceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63D229E070C700A89FD8 /* ExperienceRepository.swift */; };
+		6D4B63DA29E0B1A300A89FD8 /* AboutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63D929E0B1A300A89FD8 /* AboutRepository.swift */; };
+		6D4B63DC29E0B34700A89FD8 /* EducationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63DB29E0B34700A89FD8 /* EducationRepository.swift */; };
+		6D4B63FE29E0B76B00A89FD8 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63FC29E0B76B00A89FD8 /* dataModel.xcdatamodeld */; };
+		6D4B640329E0B7F500A89FD8 /* CDEducation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640129E0B7F500A89FD8 /* CDEducation+CoreDataClass.swift */; };
+		6D4B640429E0B7F500A89FD8 /* CDEducation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640229E0B7F500A89FD8 /* CDEducation+CoreDataProperties.swift */; };
+		6D4B640729E0B81100A89FD8 /* CDSkill+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640529E0B81100A89FD8 /* CDSkill+CoreDataClass.swift */; };
+		6D4B640829E0B81100A89FD8 /* CDSkill+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640629E0B81100A89FD8 /* CDSkill+CoreDataProperties.swift */; };
+		6D4B640B29E0C24200A89FD8 /* AboutEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640A29E0C24200A89FD8 /* AboutEditViewModel.swift */; };
+		6D4B640D29E0C6F200A89FD8 /* SkillRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640C29E0C6F200A89FD8 /* SkillRepository.swift */; };
+		6D4B640F29E0CF0200A89FD8 /* SectionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640E29E0CF0200A89FD8 /* SectionListModel.swift */; };
 		6D849F5C29CF53630041685D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F5B29CF53630041685D /* AppDelegate.swift */; };
 		6D849F5E29CF53630041685D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F5D29CF53630041685D /* SceneDelegate.swift */; };
 		6D849F6529CF53640041685D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D849F6429CF53640041685D /* Assets.xcassets */; };
@@ -54,6 +68,20 @@
 		6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDateTextView.swift; sourceTree = "<group>"; };
 		6D4B63C329DEC40C00A89FD8 /* ExperienceEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditViewModel.swift; sourceTree = "<group>"; };
 		6D4B63C529DEC41600A89FD8 /* EducationEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationEditViewModel.swift; sourceTree = "<group>"; };
+		6D4B63CB29E06AC800A89FD8 /* CDExperience+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDExperience+CoreDataClass.swift"; path = "PorfolioCreator/LocalStorage/Experience/CDExperience+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		6D4B63CC29E06AC800A89FD8 /* CDExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDExperience+CoreDataProperties.swift"; path = "PorfolioCreator/LocalStorage/Experience/CDExperience+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		6D4B63D029E06DAD00A89FD8 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		6D4B63D229E070C700A89FD8 /* ExperienceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceRepository.swift; sourceTree = "<group>"; };
+		6D4B63D929E0B1A300A89FD8 /* AboutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRepository.swift; sourceTree = "<group>"; };
+		6D4B63DB29E0B34700A89FD8 /* EducationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationRepository.swift; sourceTree = "<group>"; };
+		6D4B63FD29E0B76B00A89FD8 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
+		6D4B640129E0B7F500A89FD8 /* CDEducation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEducation+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		6D4B640229E0B7F500A89FD8 /* CDEducation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEducation+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		6D4B640529E0B81100A89FD8 /* CDSkill+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDSkill+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		6D4B640629E0B81100A89FD8 /* CDSkill+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDSkill+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		6D4B640A29E0C24200A89FD8 /* AboutEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutEditViewModel.swift; sourceTree = "<group>"; };
+		6D4B640C29E0C6F200A89FD8 /* SkillRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillRepository.swift; sourceTree = "<group>"; };
+		6D4B640E29E0CF0200A89FD8 /* SectionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListModel.swift; sourceTree = "<group>"; };
 		6D849F5829CF53630041685D /* PorfolioCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PorfolioCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D849F5B29CF53630041685D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D849F5D29CF53630041685D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +147,57 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		6D4B63C729E029BE00A89FD8 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				6D4B63FC29E0B76B00A89FD8 /* dataModel.xcdatamodeld */,
+				6D4B63D029E06DAD00A89FD8 /* PersistentStorage.swift */,
+				6D4B640929E0BD7D00A89FD8 /* About */,
+				6D4B640029E0B7D900A89FD8 /* Skill */,
+				6D4B63FF29E0B7D000A89FD8 /* Education */,
+				6D4B63CF29E06ACE00A89FD8 /* Experience */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		6D4B63CF29E06ACE00A89FD8 /* Experience */ = {
+			isa = PBXGroup;
+			children = (
+				6D4B63D229E070C700A89FD8 /* ExperienceRepository.swift */,
+				6D4B63CC29E06AC800A89FD8 /* CDExperience+CoreDataProperties.swift */,
+				6D4B63CB29E06AC800A89FD8 /* CDExperience+CoreDataClass.swift */,
+			);
+			path = Experience;
+			sourceTree = "<group>";
+		};
+		6D4B63FF29E0B7D000A89FD8 /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				6D4B63DB29E0B34700A89FD8 /* EducationRepository.swift */,
+				6D4B640129E0B7F500A89FD8 /* CDEducation+CoreDataClass.swift */,
+				6D4B640229E0B7F500A89FD8 /* CDEducation+CoreDataProperties.swift */,
+			);
+			path = Education;
+			sourceTree = "<group>";
+		};
+		6D4B640029E0B7D900A89FD8 /* Skill */ = {
+			isa = PBXGroup;
+			children = (
+				6D4B640529E0B81100A89FD8 /* CDSkill+CoreDataClass.swift */,
+				6D4B640629E0B81100A89FD8 /* CDSkill+CoreDataProperties.swift */,
+				6D4B640C29E0C6F200A89FD8 /* SkillRepository.swift */,
+			);
+			path = Skill;
+			sourceTree = "<group>";
+		};
+		6D4B640929E0BD7D00A89FD8 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				6D4B63D929E0B1A300A89FD8 /* AboutRepository.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		6D849F4F29CF53630041685D = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +217,7 @@
 		6D849F5A29CF53630041685D /* PorfolioCreator */ = {
 			isa = PBXGroup;
 			children = (
+				6D4B63C729E029BE00A89FD8 /* LocalStorage */,
 				6DE0F8FF29DAADF100812097 /* Protocols */,
 				6DE47CE329D1DC0000F38FCD /* Controllers */,
 				6D91895629D061C40043683D /* ViewModel */,
@@ -192,6 +272,7 @@
 				6DE0F90D29DC9EE700812097 /* SkillsEditViewModel.swift */,
 				6D4B63C329DEC40C00A89FD8 /* ExperienceEditViewModel.swift */,
 				6D4B63C529DEC41600A89FD8 /* EducationEditViewModel.swift */,
+				6D4B640A29E0C24200A89FD8 /* AboutEditViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -238,6 +319,7 @@
 				6DE47CE629D22B5900F38FCD /* SectionType.swift */,
 				6DE47CF929D2C1F000F38FCD /* SectionBaseModel.swift */,
 				6DE47CFB29D2D52200F38FCD /* SectionListDataModel.swift */,
+				6D4B640E29E0CF0200A89FD8 /* SectionListModel.swift */,
 			);
 			path = SectionModels;
 			sourceTree = "<group>";
@@ -312,7 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D4B640329E0B7F500A89FD8 /* CDEducation+CoreDataClass.swift in Sources */,
 				6DE0F90E29DC9EE800812097 /* SkillsEditViewModel.swift in Sources */,
+				6D4B63FE29E0B76B00A89FD8 /* dataModel.xcdatamodeld in Sources */,
 				6DE0F91529DD71F300812097 /* SkillModel.swift in Sources */,
 				6DE47CF729D2327E00F38FCD /* SectionListViewModel.swift in Sources */,
 				6D849F7429D0014F0041685D /* Extensions.swift in Sources */,
@@ -325,25 +409,37 @@
 				6D1BD84829D6D42E00570C46 /* ExperienceListViewController.swift in Sources */,
 				6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */,
 				6D1BD84A29D6D43B00570C46 /* EducationListViewController.swift in Sources */,
+				6D4B63D329E070C700A89FD8 /* ExperienceRepository.swift in Sources */,
 				6DE0F90629DC2CF100812097 /* SingleChipView.swift in Sources */,
 				6D849F7729D002300041685D /* ExperienceModel.swift in Sources */,
 				6DE47CE229D1DBFA00F38FCD /* SectionListViewController.swift in Sources */,
 				6DE47CED29D22BCE00F38FCD /* SkillSectionTableViewCell.swift in Sources */,
+				6D4B640B29E0C24200A89FD8 /* AboutEditViewModel.swift in Sources */,
 				6DE47CEF29D22E0A00F38FCD /* AboutSectionTableViewCell.swift in Sources */,
 				6DE47CEB29D22BAC00F38FCD /* EducationSectionTableViewCell.swift in Sources */,
 				6DE47CE929D22B9000F38FCD /* ExperienceSectionTableViewCell.swift in Sources */,
 				6D849F5C29CF53630041685D /* AppDelegate.swift in Sources */,
+				6D4B63CD29E06AC800A89FD8 /* CDExperience+CoreDataClass.swift in Sources */,
+				6D4B63CE29E06AC800A89FD8 /* CDExperience+CoreDataProperties.swift in Sources */,
+				6D4B640F29E0CF0200A89FD8 /* SectionListModel.swift in Sources */,
+				6D4B640D29E0C6F200A89FD8 /* SkillRepository.swift in Sources */,
 				6DE0F90829DC311C00812097 /* EducationListViewModel.swift in Sources */,
+				6D4B640429E0B7F500A89FD8 /* CDEducation+CoreDataProperties.swift in Sources */,
 				6DE47CF329D231BA00F38FCD /* EducationModel.swift in Sources */,
+				6D4B63D129E06DAD00A89FD8 /* PersistentStorage.swift in Sources */,
 				6D1BD83829D586CD00570C46 /* Utils.swift in Sources */,
 				6D1BD84C29D6D44900570C46 /* SkillsEditViewController.swift in Sources */,
 				6DE47CF129D231AD00F38FCD /* AboutModel.swift in Sources */,
 				6D1BD85229D7F3ED00570C46 /* UIDateTextView.swift in Sources */,
 				6DE47CFC29D2D52200F38FCD /* SectionListDataModel.swift in Sources */,
+				6D4B63DC29E0B34700A89FD8 /* EducationRepository.swift in Sources */,
 				6D849F5E29CF53630041685D /* SceneDelegate.swift in Sources */,
 				6DE0F91A29DDBA4000812097 /* EducationEditViewController.swift in Sources */,
+				6D4B640729E0B81100A89FD8 /* CDSkill+CoreDataClass.swift in Sources */,
 				6DE47CFA29D2C1F000F38FCD /* SectionBaseModel.swift in Sources */,
+				6D4B640829E0B81100A89FD8 /* CDSkill+CoreDataProperties.swift in Sources */,
 				6DE0F90C29DC66B100812097 /* SingleChipModel.swift in Sources */,
+				6D4B63DA29E0B1A300A89FD8 /* AboutRepository.swift in Sources */,
 				6DE0F91829DDBA3200812097 /* ExperienceEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +646,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6D4B63FC29E0B76B00A89FD8 /* dataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6D4B63FD29E0B76B00A89FD8 /* dataModel.xcdatamodel */,
+			);
+			currentVersion = 6D4B63FD29E0B76B00A89FD8 /* dataModel.xcdatamodel */;
+			path = dataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6D849F5029CF53630041685D /* Project object */;
 }

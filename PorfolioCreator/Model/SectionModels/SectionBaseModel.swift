@@ -9,14 +9,14 @@ import Foundation
 
 public class SectionBaseModel {
     let sectionType: SectionType
-    var content: [AnyObject]
+    var content: [Any]
     
     init(sectionType: SectionType, content: [AnyObject]) {
         self.sectionType = sectionType
         self.content = content
     }
     
-    func getContent(at idx: Int) -> AnyObject? {
+    func getContent(at idx: Int) -> Any? {
         if idx >= content.count {
             return nil
         }

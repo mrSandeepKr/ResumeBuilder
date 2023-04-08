@@ -10,16 +10,18 @@
 
 import Foundation
 
-public class ExperienceModel {
+struct ExperienceModel {
+    let id: UUID
     let companyName: String
     let designation: String
     let roleDescription: String
     let startDate: Date
-    let endDate: Date
+    let endDate: Date?
     let isPresent: Bool
     let skills: [String]
     
-    init(companyName: String, designation: String, roleDescription: String, startDate: Date, endDate: Date, isPresent: Bool, skills: [String]) {
+    init(id: UUID = UUID(), companyName: String, designation: String, roleDescription: String, startDate: Date, endDate: Date?, isPresent: Bool, skills: [String]) {
+        self.id = id
         self.companyName = companyName
         self.designation = designation
         self.roleDescription = roleDescription
@@ -33,7 +35,7 @@ public class ExperienceModel {
                                                  designation: "",
                                                  roleDescription: "",
                                                  startDate: Date(),
-                                                 endDate: Date(),
+                                                 endDate: nil,
                                                  isPresent: false,
                                                  skills: [])
 }
