@@ -39,7 +39,7 @@ class AboutEditViewController: UIViewController {
             await viewModel.fetchData()
             await MainActor.run(body: {[weak self] in
                 guard let self = self else {return}
-                self.aboutTextView.contentValue = self.viewModel.aboutString
+                self.aboutTextView.contentValue = self.viewModel.model.aboutText
             })
         }
     }

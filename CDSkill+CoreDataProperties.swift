@@ -21,5 +21,10 @@ extension CDSkill {
     func convertToSkill() -> SkillModel {
         return SkillModel(id: self.id, name: self.name)
     }
+    
+    func update(with skill: SkillModel) {
+        self.id = skill.id
+        self.name = skill.name
+    }
 }
 

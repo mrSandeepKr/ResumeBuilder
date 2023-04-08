@@ -30,6 +30,8 @@
 		6D4B640B29E0C24200A89FD8 /* AboutEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640A29E0C24200A89FD8 /* AboutEditViewModel.swift */; };
 		6D4B640D29E0C6F200A89FD8 /* SkillRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640C29E0C6F200A89FD8 /* SkillRepository.swift */; };
 		6D4B640F29E0CF0200A89FD8 /* SectionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B640E29E0CF0200A89FD8 /* SectionListModel.swift */; };
+		6D4B641229E209D400A89FD8 /* CDAbout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B641029E209D400A89FD8 /* CDAbout+CoreDataClass.swift */; };
+		6D4B641329E209D400A89FD8 /* CDAbout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B641129E209D400A89FD8 /* CDAbout+CoreDataProperties.swift */; };
 		6D849F5C29CF53630041685D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F5B29CF53630041685D /* AppDelegate.swift */; };
 		6D849F5E29CF53630041685D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D849F5D29CF53630041685D /* SceneDelegate.swift */; };
 		6D849F6529CF53640041685D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D849F6429CF53640041685D /* Assets.xcassets */; };
@@ -82,6 +84,8 @@
 		6D4B640A29E0C24200A89FD8 /* AboutEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutEditViewModel.swift; sourceTree = "<group>"; };
 		6D4B640C29E0C6F200A89FD8 /* SkillRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillRepository.swift; sourceTree = "<group>"; };
 		6D4B640E29E0CF0200A89FD8 /* SectionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListModel.swift; sourceTree = "<group>"; };
+		6D4B641029E209D400A89FD8 /* CDAbout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAbout+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		6D4B641129E209D400A89FD8 /* CDAbout+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAbout+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		6D849F5829CF53630041685D /* PorfolioCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PorfolioCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D849F5B29CF53630041685D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D849F5D29CF53630041685D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 		6D4B640929E0BD7D00A89FD8 /* About */ = {
 			isa = PBXGroup;
 			children = (
+				6D4B641029E209D400A89FD8 /* CDAbout+CoreDataClass.swift */,
+				6D4B641129E209D400A89FD8 /* CDAbout+CoreDataProperties.swift */,
 				6D4B63D929E0B1A300A89FD8 /* AboutRepository.swift */,
 			);
 			path = About;
@@ -427,6 +433,7 @@
 				6D4B640429E0B7F500A89FD8 /* CDEducation+CoreDataProperties.swift in Sources */,
 				6DE47CF329D231BA00F38FCD /* EducationModel.swift in Sources */,
 				6D4B63D129E06DAD00A89FD8 /* PersistentStorage.swift in Sources */,
+				6D4B641329E209D400A89FD8 /* CDAbout+CoreDataProperties.swift in Sources */,
 				6D1BD83829D586CD00570C46 /* Utils.swift in Sources */,
 				6D1BD84C29D6D44900570C46 /* SkillsEditViewController.swift in Sources */,
 				6DE47CF129D231AD00F38FCD /* AboutModel.swift in Sources */,
@@ -438,6 +445,7 @@
 				6D4B640729E0B81100A89FD8 /* CDSkill+CoreDataClass.swift in Sources */,
 				6DE47CFA29D2C1F000F38FCD /* SectionBaseModel.swift in Sources */,
 				6D4B640829E0B81100A89FD8 /* CDSkill+CoreDataProperties.swift in Sources */,
+				6D4B641229E209D400A89FD8 /* CDAbout+CoreDataClass.swift in Sources */,
 				6DE0F90C29DC66B100812097 /* SingleChipModel.swift in Sources */,
 				6D4B63DA29E0B1A300A89FD8 /* AboutRepository.swift in Sources */,
 				6DE0F91829DDBA3200812097 /* ExperienceEditViewController.swift in Sources */,

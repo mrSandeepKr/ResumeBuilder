@@ -9,18 +9,18 @@ import Foundation
 
 class AboutEditViewModel {
     let repository: AboutRepository
-    var aboutString: String
+    var model: AboutModel
     
     init(repository: AboutRepository) {
         self.repository = repository
-        aboutString = ""
+        model = AboutModel(aboutText: "")
     }
     
     func fetchData() async {
-       aboutString =  repository.getAboutString()
+        model =  repository.getAbout()
     }
     
     func updateData(with aboutString: String) async {
-        repository.updateAboutString(with: aboutString)
+        repository.update(with: AboutModel(aboutText: aboutString))
     }
 }
