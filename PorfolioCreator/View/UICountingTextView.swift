@@ -84,7 +84,7 @@ class UICountingTextView: UIView {
         constraints.append(contentsOf: [
             headingLabel.topAnchor.constraint(equalTo: topAnchor),
             headingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            headingLabel.heightAnchor.constraint(equalToConstant: headingLabelHeight),
+            headingLabel.heightAnchor.constraint(equalToConstant: showHeading ? headingLabelHeight : 0),
             headingLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             headingLabel.bottomAnchor.constraint(equalTo: contentTextView.topAnchor, constant: headingLabelBottomMargin)
         ])
@@ -92,7 +92,7 @@ class UICountingTextView: UIView {
         constraints.append(contentsOf: [
             countingLabel.topAnchor.constraint(equalTo: contentTextView.bottomAnchor, constant: countingLabelTopMargin),
             countingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            countingLabel.heightAnchor.constraint(equalToConstant: countingLabelHeight),
+            countingLabel.heightAnchor.constraint(equalToConstant: showCharCount ? countingLabelHeight : 0),
             countingLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             countingLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
         ])

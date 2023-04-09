@@ -12,10 +12,11 @@ class SkillsEditViewController: UIViewController {
     let viewSideMargin: CGFloat = 15
     
     let skillsInputTextView: UICountingTextView = {
-        let countingTextView = UICountingTextView(maxCharCount: 60, showCharCount: true)
+        let countingTextView = UICountingTextView(maxCharCount: 60,showHeading: false, showCharCount: true)
         countingTextView.translatesAutoresizingMaskIntoConstraints = false
         countingTextView.contentTextView.font = UIFont.systemFont(ofSize: 15)
         countingTextView.numberOfVisibleLines = 1
+        
         return countingTextView
     }()
     

@@ -143,14 +143,14 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
         
         let textView = UITextView()
         textView.text = viewModel.data[section].sectionType.rawValue
-        textView.font = UIFont.systemFont(ofSize: 19)
+        textView.font = UIFont.boldSystemFont(ofSize: 24)
         textView.textColor = .black
         textView.isEditable = false
         textView.textContainerInset = .zero
         textView.isScrollEnabled = false
         
         let labelSize = textView.sizeThatFits(CGSize(width: tableView.frame.width, height: sectionHeight))
-        textView.frame = CGRect(x: 20,
+        textView.frame = CGRect(x: 10,
                              y: (sectionHeight - labelSize.height) / 2,
                              width: labelSize.width,
                              height: labelSize.height)
