@@ -36,16 +36,13 @@ class SectionListViewController: UIViewController {
         sectionsTableView.delegate = self
         sectionsTableView.dataSource = self
         
-        Task.init {[weak self] in
-            guard let self = self else {return}
-            await viewModel.fetchData()
-            await MainActor.run(body: {[weak self] in
-                guard let self = self else {return}
-                self.sectionsTableView.reloadData()
-            })
-        }
+        sectionListNeedsUpdate()
         
         NSLayoutConstraint.activate(staticConstraints)
+        
+        NotificationCenter.default.addObserver(forNames: [.UpdateAbout, .UpdateSkill, .UpdateEducation, .UpdateExperience],
+                                               target: self,
+                                               selector: #selector(sectionListNeedsUpdate))
     }
     
     var staticConstraints: [NSLayoutConstraint] {
@@ -59,6 +56,20 @@ class SectionListViewController: UIViewController {
         ])
         
         return constraints
+    }
+    
+    @objc func sectionListNeedsUpdate() {
+        Task.init {
+            await self.viewModel.fetchData()
+            await MainActor.run(body: {
+                
+                self.sectionsTableView.reloadData()
+            })
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -83,8 +94,12 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
             
         case .Experience:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceSectionTableViewCell.reusableIdentifier, for: indexPath) as? ExperienceSectionTableViewCell,
-                  let model = viewModel.data[indexPath.section].content[indexPath.row] as? ExperienceModel
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceSectionTableViewCell.reusableIdentifier, for: indexPath) as? ExperienceSectionTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            
+            guard let model = viewModel.data[indexPath.section].content[indexPath.row] as? ExperienceModel
             else {
                 return UITableViewCell()
             }
@@ -112,25 +127,37 @@ extension SectionListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        let sectionHeight: CGFloat = 50
+        let buttonSize: CGFloat = 40
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: sectionHeight))
         view.backgroundColor = .systemBackground
         
-        let buttonSize = 40
-        let button = UIButton(frame: CGRect(x: Int(tableView.frame.width) - 40 - 10, y: 5, width: buttonSize, height: buttonSize))
-        button.setImage(UIImage.init(systemName: "pencil"), for: .normal)
-        button.tag = section
-        button.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+        let editButton = UIButton(frame: CGRect(x: tableView.frame.width - buttonSize - 10,
+                                            y: (sectionHeight - buttonSize) / 2,
+                                            width: buttonSize,
+                                            height: buttonSize))
+        editButton.setImage(UIImage.init(systemName: "pencil"), for: .normal)
+        editButton.tag = section
+        editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
         
-        let label = UILabel()
-        label.text = viewModel.data[section].sectionType.rawValue
-        label.font = UIFont.systemFont(ofSize: 19)
-        label.textColor = .black
+        let textView = UITextView()
+        textView.text = viewModel.data[section].sectionType.rawValue
+        textView.font = UIFont.systemFont(ofSize: 19)
+        textView.textColor = .black
+        textView.isEditable = false
+        textView.textContainerInset = .zero
+        textView.isScrollEnabled = false
         
-        let size = label.sizeThatFits(CGSize(width: tableView.frame.width, height: tableView.frame.height))
-        label.frame = CGRect(x: 20, y: 5, width: size.width, height: size.height)
+        let labelSize = textView.sizeThatFits(CGSize(width: tableView.frame.width, height: sectionHeight))
+        textView.frame = CGRect(x: 20,
+                             y: (sectionHeight - labelSize.height) / 2,
+                             width: labelSize.width,
+                             height: labelSize.height)
         
-        view.addSubview(label)
-        view.addSubview(button)
+        view.addSubview(textView)
+        view.addSubview(editButton)
+        
         return view
     }
     

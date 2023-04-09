@@ -31,6 +31,8 @@ struct AboutDataRepository: AboutRepository {
     func update(with aboutModel: AboutModel) {
         if let cdAbout = getCDAbout() {
             cdAbout.update(with: aboutModel)
+            PersistentStorage.shared.saveContext()
+            return
         }
         
         create(about: aboutModel)
@@ -41,14 +43,15 @@ struct AboutDataRepository: AboutRepository {
     // But to ensure disparity, Core Data is being used.
     private func getCDAbout() -> CDAbout? {
         do {
-            if let cdAboutList = try PersistentStorage.shared.context.fetch(CDAbout.fetchRequest()) as? [CDAbout],
-                  let cdAbout = cdAboutList.first
-            {
-                return cdAbout
+            if let cdAboutList = try PersistentStorage.shared.context.fetch(CDAbout.fetchRequest()) as? [CDAbout] {
+                if let cdAbout = cdAboutList.first
+                {
+                    return cdAbout
+                }
             }
         }
         catch {
-            
+            debugPrint("\(error)")
         }
         
         return nil

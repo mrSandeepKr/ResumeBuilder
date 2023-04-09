@@ -29,22 +29,35 @@ class ExperienceListViewContoller: UIViewController {
                                                             target: self,
                                                             action: #selector(launchEmptyFormViewController))
         
-        Task.init {
-            await viewModel.fetchData()
-            await MainActor.run {
-                tableView.reloadData()
-            }
-        }
+        updateExperiences()
         
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         
         NSLayoutConstraint.constraintEdges(view: tableView, toLayoutGuide: view.safeAreaLayoutGuide)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateExperiences),
+                                               name: .UpdateExperience,
+                                               object: nil)
+    }
+    
+    @objc func updateExperiences() {
+        Task.init {
+            await viewModel.fetchData()
+            await MainActor.run {
+                tableView.reloadData()
+            }
+        }
     }
     
     @objc func dismissViewController() {
         dismiss(animated: true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

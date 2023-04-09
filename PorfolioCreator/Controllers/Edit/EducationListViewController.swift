@@ -32,22 +32,35 @@ class EducationListViewController: UIViewController {
                                                             target: self,
                                                             action: #selector(launchEmptyFormViewController))
         
-        Task.init {
-            await viewModel.fetchData()
-            await MainActor.run {
-                tableView.reloadData()
-            }
-        }
+        updateEducation()
         
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         
         NSLayoutConstraint.constraintEdges(view: tableView, toLayoutGuide: view.safeAreaLayoutGuide)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateEducation),
+                                               name: .UpdateEducation,
+                                               object: nil)
     }
     
     @objc func dismissViewController() {
         dismiss(animated: true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func updateEducation() {
+        Task.init {
+            await viewModel.fetchData()
+            await MainActor.run {
+                tableView.reloadData()
+            }
+        }
     }
 }
 

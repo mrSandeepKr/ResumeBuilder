@@ -25,6 +25,5 @@ class SectionListViewModel {
         data[1].content = experienceDataRepository.getAll() ?? []
         data[2].content = educationDataRepository.getAll() ?? []
         data[3].content = [SkillSectionModel(skills: skillDataRepository.getAll() ?? [])]
-        print(data)
     }
 }

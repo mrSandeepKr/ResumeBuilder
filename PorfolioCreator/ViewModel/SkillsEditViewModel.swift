@@ -17,7 +17,7 @@ class SkillsEditViewModel {
     }
     
     func removeSkill(skill: SkillModel) async {
-        _ = skillRepository.delete(UUID())
+        _ = skillRepository.delete(skill.id)
     }
     
     func addSkill(skillText: String) async {

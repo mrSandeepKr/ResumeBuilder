@@ -35,6 +35,7 @@ extension CDExperience {
     }
     
     func update(with experience: ExperienceModel) {
+        self.id = experience.id
         self.companyName = experience.companyName
         self.designation = experience.designation
         self.roleDescription = experience.roleDescription

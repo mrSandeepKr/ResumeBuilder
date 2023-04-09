@@ -51,3 +51,19 @@ extension UIView {
         views.forEach({self.addSubview($0)})
     }
 }
+
+extension NotificationCenter {
+  func addObserver(forNames names: [Notification.Name], target: Any, selector: Selector) {
+    for name in names {
+      addObserver(target, selector: selector, name: name, object: nil)
+    }
+  }
+}
+
+extension Notification.Name {
+    static let UpdateSectionList = Notification.Name("UpdateSectionList")
+    static let UpdateExperience = Notification.Name("UpdateExperiences")
+    static let UpdateEducation = Notification.Name("UpdateEducation")
+    static let UpdateSkill = Notification.Name("UpdateSkill")
+    static let UpdateAbout = Notification.Name("UpdateAbout")
+}
