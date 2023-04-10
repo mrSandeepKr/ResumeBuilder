@@ -44,9 +44,12 @@ class ExperienceListViewContoller: UIViewController {
     }
     
     @objc func updateExperiences() {
-        Task.init {
+        Task.init {[weak self] in
+            guard let self = self else {return}
+            
             await viewModel.fetchData()
-            await MainActor.run {
+            await MainActor.run {[weak self] in
+                guard let self = self else {return}
                 tableView.reloadData()
             }
         }

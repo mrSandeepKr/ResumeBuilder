@@ -80,17 +80,22 @@ class ExperienceEditViewController: UIViewController {
     
     @objc func saveInfoAction() {
         Task.init {[weak self] in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else {return}
+            
             await viewModel.updateInfo(companyName: companyNameTextView.contentValue,
                                  designation: designationTextView.contentValue,
                                  roleDescription: roleDescriptionTextView.contentValue,
                                  startDate: startDateTextView.contentValue,
                                  endDate: endDateTextView.contentValue,
                                  isPresent: false,
-                                 skills: [])}
+                                 skills: [])
+            
+            await MainActor.run {[weak self] in
+                guard let self = self else {return}
+                dismissViewController()
+            }
         }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

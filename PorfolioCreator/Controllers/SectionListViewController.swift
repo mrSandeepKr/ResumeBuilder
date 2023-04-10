@@ -59,9 +59,12 @@ class SectionListViewController: UIViewController {
     }
     
     @objc func sectionListNeedsUpdate() {
-        Task.init {
+        Task.init {[weak self] in
+            guard let self = self else {return}
+            
             await self.viewModel.fetchData()
-            await MainActor.run(body: {
+            await MainActor.run(body: {[weak self] in
+                guard let self = self else {return}
                 
                 self.sectionsTableView.reloadData()
             })

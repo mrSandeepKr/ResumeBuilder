@@ -65,8 +65,16 @@ class AboutEditViewController: UIViewController {
     
     @objc func saveButtonAction() {
         let aboutText = aboutTextView.contentValue
-        Task.init {
+        Task.init {[weak self] in
+            guard let self = self
+            else {
+                return
+            }
             await viewModel.updateData(with: aboutText)
+            await MainActor.run(body: {[weak self] in
+                guard let self = self else {return}
+                dismissViewController()
+            })
         }
     }
 }

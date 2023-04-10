@@ -122,6 +122,10 @@ class EducationEditViewController: UIViewController {
                                        isPresent: false,
                                        grade: self.gradeTextView.contentValue,
                                        description: self.descriptionTextView.contentValue)
+            await MainActor.run {[weak self] in
+                guard let self = self else {return}
+                dismissViewController()
+            }
         }
     }
     

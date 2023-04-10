@@ -99,7 +99,8 @@ class SkillsEditViewController: UIViewController {
             return
         }
         
-        Task.init {
+        Task.init {[weak self] in
+            guard let self = self else {return}
             await viewModel.addSkill(skillText: skillsInputTextView.contentValue)
             await MainActor.run(body: {[weak self] in
                 guard let self = self else {return}
@@ -110,7 +111,8 @@ class SkillsEditViewController: UIViewController {
     }
     
     func updateChips() {
-        Task.init {
+        Task.init {[weak self] in
+            guard let self = self else {return}
             await viewModel.fetchAndUpdateSkills()
             await MainActor.run(body: {[weak self] in
                 guard let self = self else {return}
@@ -133,9 +135,11 @@ class SkillsEditViewController: UIViewController {
 
 extension SkillsEditViewController: ChipsViewProtocol {
     func removeChip(singleChipModel: SingleChipModel) {
-        Task.init {
+        Task.init {[weak self] in
+            guard let self = self else {return}
             await viewModel.removeSkill(skill: singleChipModel.skill)
-            await MainActor.run {
+            await MainActor.run {[weak self] in
+                guard let self = self else {return}
                 updateChips()
             }
         }
