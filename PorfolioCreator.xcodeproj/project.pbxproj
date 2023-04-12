@@ -151,6 +151,36 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		6D3DFB8929E6B1F600684B9D /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				6DE0F8FF29DAADF100812097 /* Protocols */,
+				6DE47CE329D1DC0000F38FCD /* Controllers */,
+				6D91895629D061C40043683D /* ViewModel */,
+				6D849F7529D0021F0041685D /* Model */,
+				6D849F7229D0013C0041685D /* Utils */,
+				6D849F6F29CF53EC0041685D /* View */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		6D3DFB8A29E6B20F00684B9D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6DE0F90429DC2CC300812097 /* Chip */,
+				6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */,
+				6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6D3DFB8B29E6B23700684B9D /* Resume */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resume;
+			sourceTree = "<group>";
+		};
 		6D4B63C729E029BE00A89FD8 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,13 +253,10 @@
 		6D849F5A29CF53630041685D /* PorfolioCreator */ = {
 			isa = PBXGroup;
 			children = (
+				6D3DFB8B29E6B23700684B9D /* Resume */,
+				6D3DFB8A29E6B20F00684B9D /* Common */,
+				6D3DFB8929E6B1F600684B9D /* Portfolio */,
 				6D4B63C729E029BE00A89FD8 /* LocalStorage */,
-				6DE0F8FF29DAADF100812097 /* Protocols */,
-				6DE47CE329D1DC0000F38FCD /* Controllers */,
-				6D91895629D061C40043683D /* ViewModel */,
-				6D849F7529D0021F0041685D /* Model */,
-				6D849F7229D0013C0041685D /* Utils */,
-				6D849F6F29CF53EC0041685D /* View */,
 				6D849F5B29CF53630041685D /* AppDelegate.swift */,
 				6D849F5D29CF53630041685D /* SceneDelegate.swift */,
 				6D849F6429CF53640041685D /* Assets.xcassets */,
@@ -242,10 +269,7 @@
 		6D849F6F29CF53EC0041685D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6DE0F90429DC2CC300812097 /* Chip */,
 				6D1BD84E29D6E0C400570C46 /* TableViewCells */,
-				6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */,
-				6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
