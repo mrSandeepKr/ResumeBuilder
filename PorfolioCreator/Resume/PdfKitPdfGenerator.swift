@@ -8,7 +8,7 @@
 import PDFKit
 
 class PdfKitPdfGenerator: PDFGenerator {
-    func getPdfView(for model: PdfViewModel) -> UIView {
+    func getPdfView(for model: PdfModel) -> UIView {
         let pdfData = generate(from: model)
         let pdfDocument = PDFDocument(data: pdfData!)
         
@@ -22,13 +22,13 @@ class PdfKitPdfGenerator: PDFGenerator {
         return pdfView
     }
     
-    func generate(from model: PdfViewModel) -> Data? {
+    func generate(from model: PdfModel) -> Data? {
         let renderer = UIGraphicsPDFRenderer(bounds: model.pageRect)
         
         let data = renderer.pdfData { context in
             context.beginPage()
             
-            render(model.content, from: .zero, width:model.pageSize.width)
+            _ = render(model.content, from: .zero, width:model.pageSize.width)
         }
         return data
     }

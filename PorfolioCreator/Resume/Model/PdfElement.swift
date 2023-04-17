@@ -29,7 +29,6 @@ struct TextPdfElement: PdfElement {
 struct ImagePdfElement: PdfElement {
     var pdfElementType: PdfElementType = .image
     
-    let imageSize: CGFloat
     var isRounded: Bool
     var image: UIImage
 }

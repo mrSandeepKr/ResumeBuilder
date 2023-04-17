@@ -15,9 +15,10 @@
 		6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */; };
 		6D1BD85229D7F3ED00570C46 /* UIDateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */; };
 		6D38202629EABEF10052628D /* PdfKitPdfGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38202529EABEF10052628D /* PdfKitPdfGenerator.swift */; };
+		6D38202829EAF2BB0052628D /* ClassicResumeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38202729EAF2BB0052628D /* ClassicResumeFormat.swift */; };
 		6D3DFB8D29E71A5F00684B9D /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFB8C29E71A5F00684B9D /* PDFGenerator.swift */; };
 		6D3DFB8F29E8099100684B9D /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFB8E29E8099100684B9D /* PDFViewController.swift */; };
-		6D3DFB9129E80D0800684B9D /* PdfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFB9029E80D0800684B9D /* PdfViewModel.swift */; };
+		6D3DFB9129E80D0800684B9D /* PdfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFB9029E80D0800684B9D /* PdfModel.swift */; };
 		6D3DFB9329E8962E00684B9D /* PdfElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFB9229E8962E00684B9D /* PdfElement.swift */; };
 		6D3DFB9529E8966700684B9D /* PdfComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFB9429E8966700684B9D /* PdfComponent.swift */; };
 		6D4B63C429DEC40C00A89FD8 /* ExperienceEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B63C329DEC40C00A89FD8 /* ExperienceEditViewModel.swift */; };
@@ -75,9 +76,10 @@
 		6D1BD84F29D6E0E100570C46 /* UICountingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICountingTextView.swift; sourceTree = "<group>"; };
 		6D1BD85129D7F3EC00570C46 /* UIDateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDateTextView.swift; sourceTree = "<group>"; };
 		6D38202529EABEF10052628D /* PdfKitPdfGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfKitPdfGenerator.swift; sourceTree = "<group>"; };
+		6D38202729EAF2BB0052628D /* ClassicResumeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicResumeFormat.swift; sourceTree = "<group>"; };
 		6D3DFB8C29E71A5F00684B9D /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
 		6D3DFB8E29E8099100684B9D /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
-		6D3DFB9029E80D0800684B9D /* PdfViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewModel.swift; sourceTree = "<group>"; };
+		6D3DFB9029E80D0800684B9D /* PdfModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfModel.swift; sourceTree = "<group>"; };
 		6D3DFB9229E8962E00684B9D /* PdfElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfElement.swift; sourceTree = "<group>"; };
 		6D3DFB9429E8966700684B9D /* PdfComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfComponent.swift; sourceTree = "<group>"; };
 		6D4B63C329DEC40C00A89FD8 /* ExperienceEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditViewModel.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				6D3DFB8C29E71A5F00684B9D /* PDFGenerator.swift */,
 				6D3DFB8E29E8099100684B9D /* PDFViewController.swift */,
 				6D38202529EABEF10052628D /* PdfKitPdfGenerator.swift */,
+				6D38202729EAF2BB0052628D /* ClassicResumeFormat.swift */,
 			);
 			path = Resume;
 			sourceTree = "<group>";
@@ -202,7 +205,7 @@
 			children = (
 				6D3DFB9229E8962E00684B9D /* PdfElement.swift */,
 				6D3DFB9429E8966700684B9D /* PdfComponent.swift */,
-				6D3DFB9029E80D0800684B9D /* PdfViewModel.swift */,
+				6D3DFB9029E80D0800684B9D /* PdfModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -466,8 +469,9 @@
 				6D4B63C429DEC40C00A89FD8 /* ExperienceEditViewModel.swift in Sources */,
 				6D1BD84829D6D42E00570C46 /* ExperienceListViewController.swift in Sources */,
 				6D1BD85029D6E0E100570C46 /* UICountingTextView.swift in Sources */,
+				6D38202829EAF2BB0052628D /* ClassicResumeFormat.swift in Sources */,
 				6D1BD84A29D6D43B00570C46 /* EducationListViewController.swift in Sources */,
-				6D3DFB9129E80D0800684B9D /* PdfViewModel.swift in Sources */,
+				6D3DFB9129E80D0800684B9D /* PdfModel.swift in Sources */,
 				6D4B63D329E070C700A89FD8 /* ExperienceRepository.swift in Sources */,
 				6D3DFB8D29E71A5F00684B9D /* PDFGenerator.swift in Sources */,
 				6DE0F90629DC2CF100812097 /* SingleChipView.swift in Sources */,

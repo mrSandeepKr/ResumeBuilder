@@ -30,6 +30,8 @@ struct HorizontalPdfComponent: PdfComponent {
         self.widthRatio = widthRatio
         self.subComponents = subComponents
     }
+    
+    static let defaultInstance = HorizontalPdfComponent(subComponents: [])
 }
 
 struct VerticalPdfComponent: PdfComponent {
@@ -43,6 +45,8 @@ struct VerticalPdfComponent: PdfComponent {
         self.widthRatio = widthRatio
         self.subComponents = subComponents
     }
+    
+    static let defaultInstance = VerticalPdfComponent(subComponents: [])
 }
 
 struct ElementPdfComponent: PdfComponent {

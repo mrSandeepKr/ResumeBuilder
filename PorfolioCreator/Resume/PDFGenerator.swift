@@ -8,5 +8,5 @@
 import PDFKit
 
 protocol PDFGenerator {
-    func getPdfView(for model: PdfViewModel) -> UIView
+    func getPdfView(for model: PdfModel) -> UIView
 }
